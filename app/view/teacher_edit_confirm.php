@@ -3,25 +3,24 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Sửa thông tin giáo viên</title>
-    <link rel="stylesheet" href="../../web/css/teacher_confirm.css">
+	<title>Xác nhận tin giáo viên</title>
+    <link rel="stylesheet" href="../../web/css/teacher_edit_confirm.css">
 </head>
 <body>
-
 	<?php
-	$listGender = [
-		'Nam',
-		'Nữ',
-	];
 
 	$listDepartment = [
-		'Khoa Học Máy Tính',
-		'Khoa Học Vật Liệu',
+		'001'=>'Khoa Học Máy Tính',
+		'002'=>'Khoa Học Vật Liệu',
+		'003'=>'Hải Dương Học',
 	];
 
 	$listDegree = [
-		'Tiến sĩ',
-		'Thạc sĩ',
+		'001'=>'Cử nhân',
+		'002'=>'Thạc sĩ',
+		'003'=>'Tiến sĩ',
+		'004'=>'Phó giáo sư',
+		'005'=>'Giáo sư',
 	];
 
 	?>
@@ -65,7 +64,7 @@
 						<div>Mô tả thêm</div>
 					</div>
 					<div class='label-input-description'>
-						<input name='description' value="RRRRRRRRRRRRR" disabled>
+						<input name="description" value="RRRRR" disabled>
 					</div>
 				</div>
 				<div>

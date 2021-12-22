@@ -35,14 +35,14 @@
 	padding: 10px 15px;
 }
 
-.label-input>input {
+.label-input>input, select {
 	padding: 8px 10px;
 	min-width: 250px;
 }
 
 .label-input-description>input {
 	margin-right: 40px;
-	margin-top: 20px;
+	margin-top: 30px;
 	padding: 10px;
 	min-width: 550px;
 	min-height: 100px;

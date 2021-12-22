@@ -43,9 +43,10 @@
 .label-input-description>input {
 	margin-right: 40px;
 	margin-top: 20px;
-	padding: 10px 15px;
+	padding: 10px;
 	min-width: 550px;
 	min-height: 100px;
+	max-lines: 5;
 }
 
 button {

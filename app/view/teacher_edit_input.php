@@ -4,33 +4,39 @@
 <head>
 	<meta charset="utf-8">
 	<title>Sửa thông tin giáo viên</title>
-	<link rel="stylesheet" href="../../web/css/teacher_edit.css">
+	<link rel="stylesheet" href="../../web/css/teacher_edit_input.css">
 </head>
 
 <body>
+
 	<?php
+
+	$listSpecialized = [
+		'001' => 'Khoa Học Máy Tính',
+		'002' => 'Khoa Học Dữ Liệu',
+		'003' => 'Hải Dương Học',
+	];
+
+	$listDegree = [
+		'001' => 'Cử nhân',
+		'002' => 'Thạc sĩ',
+		'003' => 'Tiến sĩ',
+		'004' => 'Phó giáo sư',
+		'005' => 'Giáo sư',
+	];
+
 	include '../common/db.php';
-	?>
+	$result = $conn->prepare("SELECT * FROM teacher WHERE id='2'");
+	$result->execute();
 
-	<?php
+	$teacherName = $teacherSpecialized = $teacherDegree = $teacherDescription = '';
+	foreach ($result as $row) {
+		$teacherSpecialized = $row['specialized'];
+		$teacherDegree = $row['degree'];
+		$teacherName = $row['name'];
+		$teacherDescription = $row['description'];
+	}
 
-		$listDepartment = [
-			'Khoa Học Máy Tính',
-			'Khoa Học Vật Liệu',
-		];
-
-		$listDegree = [
-			'Tiến sĩ',
-			'Thạc sĩ',
-		];
-
-	?>
-
-	<?php
-		$teacherName = $_POST['name'];
-		$teacherSpecialized = $_POST['specialized'];
-		$teacherDegree = $_POST['degree'];
-		$teacherDescription = $_POST['description'];
 	?>
 
 	<div class='container body'>
@@ -42,9 +48,6 @@
 					</div>
 					<div class='label-input'>
 						<input type="text" name="teacherName" value="<?php echo $teacherName ?>">
-						<?php
-						echo $teacherName
-						?>
 					</div>
 				</div>
 				<div class='sublabel'>
@@ -54,11 +57,19 @@
 					<div class='label-input'>
 						<select name='teacherSpecialized' id='idSpecialized'>
 
-							<?php foreach ($listSpecialized as $specialized) : ?>
+							<option><?php
+									foreach ($listSpecialized as $key => $specialized) {
+										if ($teacherSpecialized == $key) {
+											echo $specialized;
+										}
+									}
 
-								<option value='<?php echo $specialized['value'] ?>'>
+									?></option>
 
-									<?php echo $specialized['name'] ?>
+							<?php foreach ($listSpecialized as $key => $specialized) : ?>
+								<option>
+
+									<?php echo $specialized; ?>
 
 								</option>
 
@@ -73,11 +84,20 @@
 					<div class='label-input'>
 						<select name='teacherDegree' id='idDegree'>
 
-							<?php foreach ($listDegree as $degree) : ?>
+							<option><?php
+									foreach ($listDegree as $key => $degree) {
+										if ($teacherDegree == $key) {
+											echo $degree;
+										}
+									}
 
-								<option value='<?php echo $degree['value'] ?>'>
+									?></option>
 
-									<?php echo $degree['name'] ?>
+							<?php foreach ($listDegree as $key => $degree) : ?>
+
+								<option value='<?php echo $teacherDegree ?>'>
+
+									<?php echo $degree ?>
 
 								</option>
 
@@ -91,6 +111,7 @@
 					</div>
 					<div class='label-input'>
 						<input name='avatar'>
+						<!-- <button type="submit" name="submit">Browse</button> -->
 					</div>
 				</div>
 				<div class='sublabel'>
@@ -99,9 +120,6 @@
 					</div>
 					<div class='label-input-description'>
 						<input name="description" value="<?php echo $teacherDescription ?>">
-						<?php
-							echo $teacherDescription
-						?>
 					</div>
 				</div>
 				<div>

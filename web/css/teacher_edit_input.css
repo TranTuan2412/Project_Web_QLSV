@@ -48,6 +48,12 @@
 	min-height: 100px;
 }
 
+.error {
+    color: red;
+	display: flex;
+	padding-top: 5px;
+}
+
 button {
 	padding: 10px 20px;
 	border-radius: 10px;

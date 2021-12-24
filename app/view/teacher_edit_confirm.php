@@ -8,20 +8,11 @@
 </head>
 <body>
 	<?php
-
-	$listDepartment = [
-		'001'=>'Khoa Học Máy Tính',
-		'002'=>'Khoa Học Vật Liệu',
-		'003'=>'Hải Dương Học',
-	];
-
-	$listDegree = [
-		'001'=>'Cử nhân',
-		'002'=>'Thạc sĩ',
-		'003'=>'Tiến sĩ',
-		'004'=>'Phó giáo sư',
-		'005'=>'Giáo sư',
-	];
+		
+		$teacherName = $_GET['teacherName'];
+		$teacherSpecialized = $_GET['teacherSpecialized'];
+		$teacherDegree = $_GET['teacherDegree'];
+		$teacherDescription = $_GET['teacherDescription'];
 
 	?>
 	<div class='container body'>
@@ -32,7 +23,7 @@
 						<div>Họ và tên</div>
 					</div>
 					<div class='label-input'>
-						<input type="text" name="name_teacher" value="Nguyễn Văn A" disabled>
+						<input type="text" name="teacherName" value="<?php echo $teacherName ?>" disabled>
 					</div>
 				</div>
 				<div class='sublabel'>
@@ -40,7 +31,7 @@
 						<div>Chuyên ngành</div>
 					</div>
 					<div class='label-input'>
-						<input type="text" name="department" value="Lập trình web" disabled>
+						<input type="text" name="teacherSpecialized" value="<?php echo $teacherSpecialized ?>" disabled>
 					</div>
 				</div>
 				<div class='sublabel'>
@@ -48,7 +39,7 @@
 						<div>Bằng cấp</div>
 					</div>
 					<div class='label-input'>
-						<input type="text" name="degree" value="Tiến sĩ" disabled>
+						<input type="text" name="teacherDegree" value="<?php echo $teacherDegree ?>" disabled>
 					</div>
 				</div>
 				<div class='sublabel'>
@@ -64,12 +55,12 @@
 						<div>Mô tả thêm</div>
 					</div>
 					<div class='label-input-description'>
-						<input name="description" value="RRRRR" disabled>
+						<input name="teacherDescription" value="<?php echo $teacherDescription ?>" disabled>
 					</div>
 				</div>
 				<div>
-					<button type="submit" name="submit">Sửa lại</button>
-					<button type="submit" name="submit">Lưu</button>
+					<button type="submit" name="submit_btn_1">Sửa lại</button>
+					<button type="submit" name="submit_btn_2">Lưu</button>
 				</div>
 			</div>
 		</form>

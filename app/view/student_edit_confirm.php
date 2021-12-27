@@ -8,7 +8,7 @@
     </head>
     <body>
         <div>
-            <form action="student_edit_input.php" name="studentConfirm" method="POST" id="formCf">
+            <form action="student_edit_confirm.php" name="studentConfirm" method="POST" id="formCf">
                 <div>
                     <div class='labelContainer'>
                         <div style='width: 40%; text-align:right;'>
@@ -40,8 +40,8 @@
                         </div>
                     </div>
                     <div style='width: 100%;text-align:center;'>
-                        <!-- <button type='submit' name='submit'>Sửa lại</button> -->
-                        <!-- <button type='submit' name='submit'>Xác nhận</button> -->
+                        <button type='submit' name='back'>Sửa lại</button>
+                        <button type='submit' name='submit'>Xác nhận</button>
                     </div>
                 </div>
             </form>

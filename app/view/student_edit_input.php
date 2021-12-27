@@ -9,7 +9,7 @@
     </head>
     <body>
         <div>
-            <form action="student_edit_confirm.php" name="studentEdit" method="POST" id="formId" enctype="multipart/form-data">
+            <form action="student_edit_input.php" name="studentEdit" method="POST" id="formId" enctype="multipart/form-data">
                 <div>
                     <div class='labelContainer'>
                         <div style='width: 40%; text-align:right;'>

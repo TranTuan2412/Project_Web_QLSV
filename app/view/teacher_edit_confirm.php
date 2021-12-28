@@ -1,22 +1,18 @@
+<?php
+require '../controller/teacher_edit_confirm.php';
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
 	<meta charset="utf-8">
 	<title>Xác nhận tin giáo viên</title>
-    <link rel="stylesheet" href="../../web/css/teacher_edit_confirm.css">
+	<link rel="stylesheet" href="../../web/css/teacher_edit_confirm.css">
 </head>
-<body>
-	<?php
-		
-		$teacherName = $_GET['teacherName'];
-		$teacherSpecialized = $_GET['teacherSpecialized'];
-		$teacherDegree = $_GET['teacherDegree'];
-		$teacherDescription = $_GET['teacherDescription'];
 
-	?>
+<body>
 	<div class='container body'>
-		<form name='formSignUp' action='regist.php' method="POST" >
+		<form name='formConfirm' method="POST" id="formConfirm">
 			<div class='text-position'>
 				<div class='sublabel'>
 					<div class='label-input'>
@@ -46,26 +42,33 @@
 					<div class='label-input'>
 						<div>Avatar</div>
 					</div>
-					<div class='label-input'>
-						<input name='avatar'>
-					</div>
+					<?php
+					foreach ($images as $image) {
+						if (basename($image) == $teacherAvatar) {
+							echo "<img src='$image'/> ";
+						}
+					}
+
+					?>
 				</div>
 				<div class='sublabel'>
 					<div class='label-input'>
 						<div>Mô tả thêm</div>
 					</div>
 					<div class='label-input-description'>
-						<input name="teacherDescription" value="<?php echo $teacherDescription ?>" disabled>
+						<textarea name="teacherDescription" rows="9" cols="70" maxlength="1000" disabled>
+							<?php echo $teacherDescription ?>
+						</textarea>
 					</div>
 				</div>
 				<div>
-					<button type="submit" name="submit_btn_1">Sửa lại</button>
-					<button type="submit" name="submit_btn_2">Lưu</button>
+					<button type="submit" name="submit_btn_1" id="submit_btn_1" formaction="teacher_edit_input.php">Sửa lại</button>
+					<button type="submit" name="submit_btn_2" id="submit_btn_2">Lưu</button>
 				</div>
 			</div>
 		</form>
 	</div>
-	
+
 </body>
 
 </html>

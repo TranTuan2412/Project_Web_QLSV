@@ -1,6 +1,6 @@
 <?php
-	require '../common/define.php';
-	require '../controller/teacher_edit.php';
+require '../common/define.php';
+require '../controller/teacher_edit_input.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@
 <body>
 
 	<div class='container body'>
-		<form name='formEdit' action='teacher_edit_input.php' method="POST" id="editform">
+		<form name='formEdit' action='teacher_edit_input.php' method="POST" enctype="multipart/form-data">
 			<div class='text-position'>
 				<div class='sublabel'>
 					<div class='label-input'>
@@ -43,7 +43,7 @@
 
 							<?php endforeach; ?>
 						</select>
-						
+
 						<span class="error" id="specializedError"><?php echo $errors['teacherSpecialized']; ?></span>
 					</div>
 				</div>
@@ -66,7 +66,7 @@
 
 							<?php endforeach; ?>
 						</select>
-						
+
 						<span class="error" id="degreeError"><?php echo $errors['teacherDegree']; ?></span>
 					</div>
 				</div>
@@ -75,7 +75,23 @@
 						<div>Avatar</div>
 					</div>
 					<div class='label-input'>
-						<input name='avatar'>
+						<?php
+						foreach ($images as $image) {
+							if (basename($image) == $teacherAvatar) {
+								echo "<img src='$image' id='ava'/> ";
+							}
+						}
+
+						?>
+						<img id="pic" />
+						<input type="file" name="file" id="file" onchange='uploadFile(this)' oninput="pic.src=window.URL.createObjectURL(this.files[0]);"/>
+						<label for="file">
+							<input type="text" id="file-name" name="teacherAvatar" class="name-avatar" value="<?php echo $teacherAvatar; ?>">
+							<span class="custom-file-upload">
+								Browse
+							</span>
+						</label>
+						<span class="error" id="avatarError"><?php echo $errors['teacherAvatar']; ?></span>
 					</div>
 				</div>
 				<div class='sublabel'>
@@ -83,7 +99,9 @@
 						<div>Mô tả thêm</div>
 					</div>
 					<div class='label-input-description'>
-						<input name="teacherDescription" id="idDescription" value="<?php echo $teacherDescription ?>">
+						<textarea name="teacherDescription" rows="9" cols="70" maxlength="1000">
+							<?php echo $teacherDescription ?>
+						</textarea>
 						<span class="error" id="descriptionError"><?php echo $errors['teacherDescription']; ?></span>
 					</div>
 				</div>
@@ -93,6 +111,7 @@
 			</div>
 		</form>
 	</div>
+	<script type="text/javascript" src="../../web/js/teacher_edit.js"></script>	
 
 </body>
 

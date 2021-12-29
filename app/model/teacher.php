@@ -1,5 +1,5 @@
 <?php
     require '../common/db.php';
-    $result = $conn->query("SELECT * FROM teacher order by id'");
-	$result->execute();
+    $teachers = $conn->query("SELECT * FROM `teachers` order by id");
+	$teachers->execute();
 ?>

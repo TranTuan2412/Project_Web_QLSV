@@ -13,8 +13,6 @@ foreach ($result as $row) {
 
 if (isset($_POST['submit'])) {
 
-	session_start();
-
 	if (empty($_POST['teacherName'])) {
 		$errors['teacherName'] = 'Hãy nhập tên giáo viên <br />';
 		$teacherName = "";
@@ -43,7 +41,7 @@ if (isset($_POST['submit'])) {
 		$teacherAvatar = $_POST['teacherAvatar'];
 	}
 
-	if (empty($_POST['teacherDescription'])) {
+	if (trim($_POST['teacherDescription']) == "") {
 		$errors['teacherDescription'] = 'Hãy nhập mô tả chi tiết <br />';
 		$teacherDescription = "";
 	} else if (strlen($teacherDescription) > 1000) {

@@ -1,32 +1,18 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../web/css/teacher_edit_complete.css">
+    <title>Lưu thành công</title>
+</head>
 <body>
-
-	<form action="teacher_edit_complete.php" method="post" enctype="multipart/form-data">
-		Select image to upload:
-		<input type="file" name="fileToUpload" id="fileToUpload">
-		<input type="submit" value="Upload Image" name="submit">
-	</form>
-
-	<?php
-	$target_dir = "uploads/";
-	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-	$uploadOk = 1;
-	$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-	// Check if image file is a actual image or fake image
-	if (isset($_POST["submit"])) {
-		$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-		if ($check !== false) {
-			echo "File is an image - " . $check["mime"] . ".";
-			$uploadOk = 1;
-		} else {
-			echo "File is not an image.";
-			$uploadOk = 0;
-		}
-	}
-	?>
-
+    <div class="main">
+        <div>
+			<p>Bạn đã đăng ký thành công giáo viên</p>
+            <a href="">Trở về trang chủ</a>
+        </div>
+    </div>
 </body>
-
 </html>

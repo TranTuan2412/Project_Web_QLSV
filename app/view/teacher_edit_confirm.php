@@ -1,4 +1,5 @@
 <?php
+require '../common/define.php';
 require '../controller/teacher_edit_confirm.php';
 ?>
 <!DOCTYPE html>
@@ -27,7 +28,13 @@ require '../controller/teacher_edit_confirm.php';
 						<div>Chuyên ngành</div>
 					</div>
 					<div class='label-input'>
-						<input type="text" name="teacherSpecialized" value="<?php echo $teacherSpecialized ?>" disabled>
+						<input type="text" name="teacherSpecialized" value="<?php 
+							foreach ($listSpecialized as $key => $specialized) {
+								if ($key == $teacherSpecialized) {
+									echo $specialized;
+								}
+							}
+						?>" disabled>
 					</div>
 				</div>
 				<div class='sublabel'>
@@ -35,7 +42,13 @@ require '../controller/teacher_edit_confirm.php';
 						<div>Bằng cấp</div>
 					</div>
 					<div class='label-input'>
-						<input type="text" name="teacherDegree" value="<?php echo $teacherDegree ?>" disabled>
+						<input type="text" name="teacherDegree" value="<?php 
+							foreach ($listDegree as $key => $degree) {
+								if ($key == $teacherDegree) {
+									echo $degree;
+								}
+							}
+						?>" disabled>
 					</div>
 				</div>
 				<div class='sublabel'>
@@ -56,13 +69,12 @@ require '../controller/teacher_edit_confirm.php';
 						<div>Mô tả thêm</div>
 					</div>
 					<div class='label-input-description'>
-						<textarea name="teacherDescription" rows="9" cols="70" maxlength="1000" disabled>
-							<?php echo $teacherDescription ?>
+						<textarea name="teacherDescription" rows="9" cols="70" maxlength="1000" disabled><?php echo $teacherDescription ?>
 						</textarea>
 					</div>
 				</div>
 				<div>
-					<button type="submit" name="submit_btn_1" id="submit_btn_1" formaction="teacher_edit_input.php">Sửa lại</button>
+					<button type="button" name="submit_btn_1" id="submit_btn_1" onclick="history.back()">Sửa lại</button>
 					<button type="submit" name="submit_btn_2" id="submit_btn_2">Lưu</button>
 				</div>
 			</div>

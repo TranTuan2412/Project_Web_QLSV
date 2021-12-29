@@ -35,7 +35,7 @@ require '../controller/teacher_edit_input.php';
 							<option></option>
 
 							<?php foreach ($listSpecialized as $key => $specialized) : ?>
-								<option>
+								<option value="<?php echo $key ?>">
 
 									<?php echo $specialized; ?>
 
@@ -58,7 +58,7 @@ require '../controller/teacher_edit_input.php';
 
 							<?php foreach ($listDegree as $key => $degree) : ?>
 
-								<option>
+								<option value="<?php echo $key ?>">
 
 									<?php echo $degree ?>
 
@@ -99,8 +99,7 @@ require '../controller/teacher_edit_input.php';
 						<div>Mô tả thêm</div>
 					</div>
 					<div class='label-input-description'>
-						<textarea name="teacherDescription" rows="9" cols="70" maxlength="1000">
-							<?php echo $teacherDescription ?>
+						<textarea name="teacherDescription" rows="9" cols="70" maxlength="1000"><?php echo $teacherDescription ?>
 						</textarea>
 						<span class="error" id="descriptionError"><?php echo $errors['teacherDescription']; ?></span>
 					</div>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2021 at 03:30 PM
+-- Generation Time: Dec 29, 2021 at 04:11 PM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.24
+-- PHP Version: 7.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -85,6 +85,16 @@ CREATE TABLE `subjects` (
   `created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `subjects`
+--
+
+INSERT INTO `subjects` (`id`, `name`, `avatar`, `description`, `school_year`, `updated`, `created`) VALUES
+(1, 'Lập Trình Mobile', '', '', 'Năm 4', '2021-12-29 16:08:41', '2021-12-29 16:08:41'),
+(2, 'Seminar', '', '', 'Năm 4', '2021-12-29 16:08:41', '2021-12-29 16:08:41'),
+(3, 'CSDL', '', '', 'Năm 3', '2021-12-29 16:10:26', '2021-12-29 16:10:26'),
+(4, 'Tin học văn phòng ', '', '', 'Năm 2', '2021-12-29 16:10:26', '2021-12-29 16:10:26');
+
 -- --------------------------------------------------------
 
 --
@@ -163,7 +173,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `teachers`

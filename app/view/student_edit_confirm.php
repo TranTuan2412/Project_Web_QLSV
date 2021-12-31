@@ -26,7 +26,9 @@
                         </div>
                         <div style='width: 50px;'></div>
                         <div>
-                            <img src="../../web/avatar/1/1.jpg" style="width:150px;height=150px;" alt="<?php echo $avatarStudent; ?>">            
+                            <img src="../../web/avatar/1/1.jpg" style="width:150px;height=150px;" alt="<?php echo $avatarStudent; ?>"> 
+                            <br>
+                            <span><?php echo $avatarStudent; ?></span>           
                         </div>
                     </div>
         

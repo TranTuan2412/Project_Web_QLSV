@@ -31,7 +31,8 @@
                             <img src="../../web/avatar/1/1.jpg" style="width:150px;height=150px;" alt="<?php echo $avatarStudent; ?>">
                             <br>
                             <span><?php echo $avatarStudent ?></span>
-                            <span><input type='file' name='fimeImage'></span>
+                            <span class='error' id='errorAvatar'><?php echo $error['errorAvatar']; ?></span>
+                            <span><input type='file' name='fimeImage' id='fileImage'></span>
                         </div>
                     </div>
         
@@ -42,7 +43,7 @@
                         <div style='width: 50px;'></div>
                         <div>
                             <input type='text' name='studentDescription' id='nameId' value='<?php echo $descriptionStudent ?>' >
-                            <span class='error' id='errorName'><?php echo $error['errorDescription']; ?></span>
+                            <span class='error' id='errorDescription'><?php echo $error['errorDescription']; ?></span>
                         </div>
                     </div>
                     <div style='width: 100%;text-align:center;'>

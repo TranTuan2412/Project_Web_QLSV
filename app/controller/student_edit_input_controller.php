@@ -13,7 +13,7 @@
             $descriptionStudent = $row['description'];
         }
     }
-
+    $upload = TRUE;
 
     if(isset($_POST['submit'])){
         if (empty(trim($_POST['studentName']))){
@@ -22,20 +22,29 @@
         if (empty(trim($_POST['studentDescription']))){
             $error['errorDescription']= 'Hãy nhập mô tả thêm <br>';
         }
-        $target_dir = "../../web/avatar/tmp/";
-        $target_file = $target_dir . basename($_FILES['fimeImage']['name']);
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        $allowtypes= array('jpg', 'png', 'jpeg');
-        if(!getimagesize($_FILES['fimeImage']['tmp_name'])){
-            $error['errorAvatar'] = $error['errorAvatar'] . 'Hãy gửi lên hình ảnh <br>';
-        }
-        if(!in_array($imageFileType,$allowtypes)){
-            $error['errorAvatar'] = $error['errorAvatar'] . 'Hãy gửi lên định dạng JPG,PNG,JPEG <br>';
+        if(!empty($_FILES['fimeImage'])){
+            $target_dir = "../../web/avatar/tmp/";
+            $target_file = $target_dir . basename($_FILES['fimeImage']['name']);
+            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            $allowtypes= array('jpg', 'png', 'jpeg');
+            if(!getimagesize($_FILES['fimeImage']['tmp_name'])){
+                $error['errorAvatar'] = $error['errorAvatar'] . 'Hãy gửi lên hình ảnh <br>';
+                $upload = FALSE;
+            }
+            if(!in_array($imageFileType,$allowtypes)){
+                $error['errorAvatar'] = $error['errorAvatar'] . 'Hãy gửi lên định dạng JPG,PNG,JPEG <br>';
+                $upload = FALSE;
+            }
         }
         
-        if(empty($error['errorName'])&&empty($error['errorAvatar'])&&empty($error['errorDescription'])){
-            move_uploaded_file($_FILES['fimeImage']['tmp_name'],$target_file);
-            $avatarStudent=$_FILES['fimeImage']['name'];
+        if(empty($error['errorName'])&&$upload&&empty($error['errorDescription'])){
+            if(!empty($_FILES['fimeImage'])){
+                move_uploaded_file($_FILES['fimeImage']['tmp_name'],$target_file);
+                $avatarStudent=$_FILES['fimeImage']['name'];
+                $_SESSION['uploadStudent'] = TRUE;
+            } else{
+                $_SESSION['uploadStudent'] = FALSE;
+            }
             $nameStudent = trim($_POST['studentName']);
             $descriptionStudent = trim($_POST['studentDescription']);
             header("Location:student_edit_confirm.php?nameStudent=$nameStudent&avatarStudent=$avatarStudent&descriptionStudent=$descriptionStudent");

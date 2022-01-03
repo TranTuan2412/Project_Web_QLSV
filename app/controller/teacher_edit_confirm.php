@@ -1,5 +1,6 @@
 <?php
 	require '../model/teacher.php';
+	$id = $_GET['id'];
 	$teacherName = $_GET['teacherName'];
 	$teacherSpecialized = $_GET['teacherSpecialized'];
 	$teacherDegree = $_GET['teacherDegree'];
@@ -12,11 +13,24 @@
 $updated = date("Y-m-d h:i:s");
 
 if(isset($_POST['submit_btn_2'])){
-	test($teacherName, $teacherSpecialized, $teacherDegree, $teacherAvatar, $teacherDescription, $updated);
+	edit($teacherName, $teacherSpecialized, $teacherDegree, $teacherAvatar, $teacherDescription, $updated, $id);
+	deleteImgTmp($teacherAvatar);
 	header("Location:../view/teacher_edit_complete.php");
 }
 
-$dirname = "../../web/avatar/";
-$images = glob($dirname . "*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}", GLOB_BRACE);
+if (file_exists("../../web/avatar/tmp/".$teacherAvatar)) {
+	$dirname = "../../web/avatar/tmp/";
+	$images = glob($dirname . "*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}", GLOB_BRACE);
+} else {
+	$dirname = "../../web/avatar/";
+	$images = glob($dirname . "*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}", GLOB_BRACE);
+}
+
+function deleteImgTmp($avatar){
+	$file="../../web/avatar/tmp/$avatar";
+	$newfile="../../web/avatar/$avatar";
+	copy($file, $newfile);
+	unlink("../../web/avatar/tmp/".$avatar);
+} 
 
 ?>

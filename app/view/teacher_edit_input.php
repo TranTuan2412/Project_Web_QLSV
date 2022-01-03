@@ -12,6 +12,11 @@ require '../controller/teacher_edit_input.php';
 </head>
 
 <body>
+	<?php
+		
+	
+		
+	?>
 
 	<div class='container body'>
 		<form name='formEdit' action='teacher_edit_input.php' method="POST" enctype="multipart/form-data">
@@ -23,6 +28,7 @@ require '../controller/teacher_edit_input.php';
 					<div class='label-input'>
 						<input type="text" name="teacherName" id="idName" value="<?php echo $teacherName; ?>">
 						<span class="error" id="nameError"><?php echo $errors['teacherName']; ?></span>
+						<input type="hidden" name="id" value="<?php echo $idr ?>">
 					</div>
 				</div>
 				<div class='sublabel'>
@@ -83,9 +89,9 @@ require '../controller/teacher_edit_input.php';
 						}
 
 						?>
-						<img id="pic" />
-						<input type="file" name="file" id="file" onchange='uploadFile(this)' oninput="pic.src=window.URL.createObjectURL(this.files[0]);"/>
+						<input type="file" name="file" id="file" onchange="uploadFile(this)" oninput='pic.src=window.URL.createObjectURL(this.files[0]);' />
 						<label for="file">
+							<img id="pic" />
 							<input type="text" id="file-name" name="teacherAvatar" class="name-avatar" value="<?php echo $teacherAvatar; ?>">
 							<span class="custom-file-upload">
 								Browse
@@ -110,7 +116,7 @@ require '../controller/teacher_edit_input.php';
 			</div>
 		</form>
 	</div>
-	<script type="text/javascript" src="../../web/js/teacher_edit.js"></script>	
+	<script type="text/javascript" src="../../web/js/teacher_edit.js"></script>
 
 </body>
 

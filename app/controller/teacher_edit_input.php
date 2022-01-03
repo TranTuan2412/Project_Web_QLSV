@@ -1,15 +1,25 @@
 <?php
 require '../model/teacher.php';
-$teacherName = $teacherSpecialized = $teacherDegree = $teacherAvatar = $teacherDescription = '';
-$errors = array('teacherName' => '', 'teacherSpecialized' => '', 'teacherDegree' => '', 'teacherAvatar' => '', 'teacherDescription' => '');
+session_start();
+$id = $teacherName = $teacherSpecialized = $teacherDegree = $teacherAvatar = $teacherDescription = '';
+$errors = array('id' => '', 'teacherName' => '', 'teacherSpecialized' => '', 'teacherDegree' => '', 'teacherAvatar' => '', 'teacherDescription' => '');
 
-foreach ($result as $row) {
-	$teacherSpecialized = $row['specialized'];
-	$teacherDegree = $row['degree'];
-	$teacherName = $row['name'];
-	$teacherAvatar = $row['avatar'];
-	$teacherDescription = $row['description'];
+if (isset($_GET['id'])) {
+	$id = $_GET['id'];
+	$_SESSION["id"] = $_GET['id'];
+	if ($id != "") {
+		$edit = getID($id);
+	};
+	foreach ($edit as $row) {
+		$teacherSpecialized = $row['specialized'];
+		$teacherDegree = $row['degree'];
+		$teacherName = $row['name'];
+		$teacherAvatar = $row['avatar'];
+		$teacherDescription = $row['description'];
+	}
 }
+
+$id = $_SESSION["id"];
 
 if (isset($_POST['submit'])) {
 
@@ -37,6 +47,9 @@ if (isset($_POST['submit'])) {
 	if (empty($_POST['teacherAvatar'])) {
 		$errors['teacherAvatar'] = 'Hãy chọn avatar <br />';
 		$teacherAvatar = "";
+	} else if (!preg_match("/\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$/", $_POST['teacherAvatar'])) {
+		$errors['teacherAvatar'] = 'Đây không là file ảnh <br />';
+		$teacherAvatar = "";
 	} else {
 		$teacherAvatar = $_POST['teacherAvatar'];
 	}
@@ -50,12 +63,12 @@ if (isset($_POST['submit'])) {
 		$teacherDescription = $_POST['teacherDescription'];
 	}
 
-	$filepath = "../../web/avatar/" . $_FILES["file"]["name"];
+	$filepath = "../../web/avatar/tmp/" . $_FILES["file"]["name"];
 
 	if (array_filter($errors)) {
-		// echo "Errors";
+		$teacherAvatar = "";
 	} else {
-		header("Location: teacher_edit_confirm.php?teacherName=$teacherName&teacherSpecialized=$teacherSpecialized&teacherDegree=$teacherDegree&teacherAvatar=$teacherAvatar&teacherDescription=$teacherDescription");
+		header("Location: teacher_edit_confirm.php?id=$id&teacherName=$teacherName&teacherSpecialized=$teacherSpecialized&teacherDegree=$teacherDegree&teacherAvatar=$teacherAvatar&teacherDescription=$teacherDescription");
 		if (move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) {
 			echo "DONE !!";
 		} else {
@@ -72,4 +85,3 @@ $dirname = "../../web/avatar/";
 $images = glob($dirname . "*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}", GLOB_BRACE);
 
 ?>
-

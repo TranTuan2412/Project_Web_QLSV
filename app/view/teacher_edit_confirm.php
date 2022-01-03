@@ -74,13 +74,12 @@ require '../controller/teacher_edit_confirm.php';
 					</div>
 				</div>
 				<div>
-					<button type="button" name="submit_btn_1" id="submit_btn_1" onclick="history.back()">Sửa lại</button>
+					<button type="button" name="submit_btn_1" id="submit_btn" onclick="history.back()">Sửa lại</button>
 					<button type="submit" name="submit_btn_2" id="submit_btn_2">Lưu</button>
 				</div>
 			</div>
 		</form>
 	</div>
-
 </body>
 
 </html>

@@ -9,3 +9,4 @@ function submitForm(action) {
     form.submit();
 }
 
+//oninput = 'pic.src=window.URL.createObjectURL(this.files[0]);'

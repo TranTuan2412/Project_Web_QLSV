@@ -12,14 +12,9 @@ require '../controller/teacher_edit_input.php';
 </head>
 
 <body>
-	<?php
-		
-	
-		
-	?>
 
 	<div class='container body'>
-		<form name='formEdit' action='teacher_edit_input.php' method="POST" enctype="multipart/form-data">
+		<form name='formEdit' action='teacher_edit_input.php<?php echo '?id=' . $id; ?>' method="POST" enctype="multipart/form-data">
 			<div class='text-position'>
 				<div class='sublabel'>
 					<div class='label-input'>
@@ -117,6 +112,11 @@ require '../controller/teacher_edit_input.php';
 		</form>
 	</div>
 	<script type="text/javascript" src="../../web/js/teacher_edit.js"></script>
+	<script>
+		if (window.history.replaceState) {
+			window.history.replaceState(null, null, window.location.href);
+		}
+	</script>
 
 </body>
 

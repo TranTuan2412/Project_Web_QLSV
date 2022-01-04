@@ -2,7 +2,7 @@
 require '../model/teacher.php';
 session_start();
 $id = $teacherName = $teacherSpecialized = $teacherDegree = $teacherAvatar = $teacherDescription = '';
-$errors = array('id' => '', 'teacherName' => '', 'teacherSpecialized' => '', 'teacherDegree' => '', 'teacherAvatar' => '', 'teacherDescription' => '');
+$errors = array('teacherName' => '', 'teacherSpecialized' => '', 'teacherDegree' => '', 'teacherAvatar' => '', 'teacherDescription' => '');
 
 if (isset($_GET['id'])) {
 	$id = $_GET['id'];

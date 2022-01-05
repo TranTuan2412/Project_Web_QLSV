@@ -1,0 +1,98 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+input{
+    width: 85%;
+    padding: 5px 5px;
+    border: 1px solid #385d8a;
+    background-color: #e1eaf4;
+}
+table{
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+}
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+.content{
+    position: relative;
+    width: 80% !important;
+    margin: auto;
+    margin-top: 100px;
+    border: 1px solid #385d8a;
+}
+
+th,td{
+    padding: 5px 10px !important;
+}
+tr{
+    text-align: center;
+}
+select{
+    width: 85%;
+    padding: 5px 5px;
+    border: 1px solid #385d8a;
+    background-color: #e1eaf4;
+}
+.filterbuilding{
+    margin-bottom: 20px;
+}
+.content.container > div{
+    margin: 20px 10px;
+    box-sizing: border-box;
+}
+tr > td:last-child > button{
+    background-color: #4f81bd;
+    color: black;
+    padding: 5px 20px;
+    border: none;
+    margin-right: 10px;
+}
+
+.filtervalue{
+    border-radius: 8px;
+    color: black;
+    background-color: #4f81bd;
+    padding: 7px 15px;
+    text-align: center;
+    border:none;
+    width: 20%;
+    margin-left: 115px;
+}
+.word{
+    padding: 7px 10px;
+    color: black;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+dialog{
+    min-width:100px;
+    min-height:150px
+}
+.debai{
+    min-height: 100px;
+    margin: auto;
+    text-align: center;
+    line-height: 170px;
+    font-size: 24px;
+}
+.btn-style{
+    background-color:#d34039;
+    color: black;
+    border: none;    
+    font-size: 18px;
+    padding:12px 5px;
+    margin:0px 10px ;
+    min-width: 90px;
+}
+.btn1-style{
+    background-color: #4f81bd;
+    color: black;
+    border: none;    
+    font-size: 18px; 
+    padding:12px 5px;
+    margin:0px 10px ;
+    min-width: 90px;
+}

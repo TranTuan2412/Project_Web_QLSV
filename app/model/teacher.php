@@ -27,7 +27,7 @@
             $query = $conn ->prepare($sqlTeacher);
             $query->execute();
         }
-        $rowTeachers = $query->fetchAll();
-        return $rowTeachers;
+        $rowAll = $query->fetchAll();
+        return $rowAll;
     }
 ?>

@@ -1,148 +1,98 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Times New Roman';
-    box-sizing: border-box;
-    font-size : 16px
+*{
+    font-family: 'Times New Roman', Times, serif;
 }
-a {
-    text-decoration: none;
-    color: #000000;
-}
-.container {
-    width: 1000px;
-    margin: 100px auto;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #385d8a;
-}
-
-table, th, td {
-    border: 1px solid #385d8a;
-    border-collapse: collapse;
-}
-
-th {
-    text-align: left;
+input{
+    width: 85%;
     padding: 5px 5px;
-}
-th:last-child {
-    text-align: center;
-}
-td {
-    padding: 5px 5px;
-}
-td:first-child {
-    text-align: right;
-    padding: 0;
-    padding-right: 5px;
-}
-td:last-child {
-    text-align: center;
-    padding: 5px 0;
-}
-
-.th__id {
-    width: 40px;
-}
-.th__username {
-   width: 200px;
-}
-
-.th__specialized {
-    width: 150px;
-}
-.th__description {
-    width: 300px;
-}
-.th__action {
-    width: 150px;
-}
-
-.count__teacher {
-    width: 200px;
-    margin-bottom: 10px;
-    margin-right: 640px;
-}
-
-
-.search {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    margin-bottom: 50px;
-    margin-right: 143px;
-}
-.btn__submit {
-    width: 110px;
-    height: 36px;
-    color: #000000;
-    background-color: #4f81bd;
-    margin-left: 142px;
-    padding: 5px 10px;
     border: 1px solid #385d8a;
-    cursor: pointer;
+    background-color: #e1eaf4;
 }
-.search__keyword {
+table{
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+}
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+.content{
+    position: relative;
+    width: 80% !important;
+    margin: auto;
+    margin-top: 100px;
+    border: 1px solid #385d8a;
+}
+
+th,td{
+    padding: 5px 10px !important;
+}
+tr{
+    text-align: center;
+}
+select{
+    width: 85%;
+    padding: 5px 5px;
+    border: 1px solid #385d8a;
+    background-color: #e1eaf4;
+}
+.filterbuilding{
     margin-bottom: 20px;
 }
-.keyword__input {
-    width: 200px;
-    height: 30px;
-    padding-left: 10px;
-    margin-left: -5px;
-    background-color: #e1eaf4;
-    border: 1px solid #385d8a;
+.content.container > div{
+    margin: 20px 10px;
+    box-sizing: border-box;
 }
-.search__specialized {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.search__specialized::after {
-    position: absolute;
-    content: "";
-    top: 4px;
-    right: 1px;
-    cursor: pointer;
-    background-color: #e1eaf4;
-    border-top: 28px solid DodgerBlue;
-    border-left: 16px solid transparent;
-    border-right: 16px solid transparent;
-    pointer-events: none;
-    transition: .25s all ease;
-
-}
-
-label {
-    width: 120px;
-    height: 30px;
-    display: inline-block;
-    color: #000000;
-    text-align: left;
-    padding-top: 10px;
-    margin: 3px 20px 3px 0;
-}
-.specialized__select {
-    width: 200px;
-    height: 30px;
-    display: inline-block;
-    color: #000000;
-    background-color: #e1eaf4;
-    border: 1px solid #385d8a;
-    cursor: pointer;
-    padding-left: 5px;
-}
-button {
-    padding: 5px 10px;
+tr > td:last-child > button{
     background-color: #4f81bd;
-    cursor: pointer;
-    font-weight: 400;
+    color: black;
+    padding: 5px 20px;
+    border: none;
+    margin-right: 10px;
+}
+
+.filtervalue{
+    border-radius: 8px;
+    color: black;
+    background-color: #4f81bd;
+    padding: 7px 15px;
+    text-align: center;
+    border:none;
+    width: 20%;
+    margin-left: 115px;
+}
+.word{
+    padding: 7px 10px;
+    color: black;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+dialog{
+    min-width:100px;
+    min-height:150px
+}
+.debai{
+    min-height: 100px;
+    margin: auto;
+    text-align: center;
+    line-height: 170px;
+    font-size: 24px;
+}
+.btn-style{
+    background-color:#d34039;
+    color: black;
+    border: none;    
+    font-size: 18px;
+    padding:12px 5px;
+    margin:0px 10px ;
+    min-width: 90px;
+}
+.btn1-style{
+    background-color: #4f81bd;
+    color: black;
+    border: none;    
+    font-size: 18px; 
+    padding:12px 5px;
+    margin:0px 10px ;
+    min-width: 90px;
 }

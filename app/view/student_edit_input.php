@@ -12,7 +12,7 @@
             <form action="student_edit_input.php" name="studentEdit" method="POST" id="formId" enctype="multipart/form-data">
                 <div>
                     <div class='labelContainer'>
-                        <div style='width: 40%; text-align:right;'>
+                        <div style="width: 40%;text-align:right;">
                             <div> Họ và Tên </div>
                         </div>
                         <div style='width: 50px;'></div>
@@ -23,12 +23,12 @@
                     </div>
                     
                     <div class='labelContainer'>
-                        <div style='width: 40%; text-align:right;'>
+                        <div style="width: 40%;text-align:right;">
                             <div>Avatar</div>
                         </div>
                         <div style='width: 50px;'></div>
                         <div>
-                            <img src="../../web/avatar/1/1.jpg" style="width:150px;height=150px;" alt="<?php echo $avatarStudent; ?>">
+                            <img src="<?php echo "../../web/avatar/".$idStudent."/".$avatarStudent.""; ?>" style="width:150px;height=150px;" alt="<?php echo $avatarStudent; ?>">
                             <br>
                             <span><?php echo $avatarStudent ?></span>
                             <span><?php if($uploadStudent){ echo "True";} else {echo "False". $_FILES['fimeImage']['name'];} ?></span>
@@ -38,12 +38,12 @@
                     </div>
         
                     <div class='labelContainer'>
-                        <div style='width: 40%; text-align:right;'>
+                        <div style="width: 40%;text-align:right;">
                             <div>Mô tả thêm</div>
                         </div>
                         <div style='width: 50px;'></div>
                         <div>
-                            <input type='text' name='studentDescription' id='nameId' value='<?php echo $descriptionStudent ?>' >
+                            <textarea cols="40" rows="5" name='studentDescription' form='formId'><?php echo $descriptionStudent ?></textarea>
                             <span class='error' id='errorDescription'><?php echo $error['errorDescription']; ?></span>
                         </div>
                     </div>

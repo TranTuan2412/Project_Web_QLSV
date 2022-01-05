@@ -3,8 +3,9 @@
     $nameStudent = $avatarStudent = $descriptionStudent = '';
     $error = array('errorName'=> '','errorAvatar'=>'','errorDescription'=>'');
     require "../common/db.php";
+    // $idStudent = $_GET['idStudent'];
+    $idStudent = 1;
     require "../model/student.php";
-    $idStudent = 2;
     $_SESSION['idStudent'] = $idStudent;
     if($result->num_rows>0){
         while($row = $result->fetch_assoc()){

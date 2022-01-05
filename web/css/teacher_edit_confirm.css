@@ -1,0 +1,74 @@
+.container {
+	width: 80%;
+	margin: auto;
+}
+
+.body {
+	border: 1px solid #99CCFF;
+}
+
+.sublabel {
+	display: flex;
+	width: 100%;
+	margin: auto;
+}
+
+.text-position {
+	text-align: center;
+}
+
+.label-input {
+	margin-right: 40px;
+	margin-top: 20px;
+	min-width: 150px;
+}
+
+.border-label {
+	border: 1px solid blue;
+}
+
+.color-label {
+	background-color: #99CCFF;
+}
+
+.label-input>div {
+	padding: 10px 15px;
+}
+
+.label-input>input, select {
+	padding: 8px 10px;
+	min-width: 250px;
+}
+
+.label-input-description>textarea {
+	margin-right: 40px;
+	margin-top: 20px;
+	padding: 8px 10px;
+	min-width: 550px;
+	min-height: 100px;
+}
+
+img {
+	display: flex; 
+	max-width:100px; 
+	max-height:100px;
+	margin-top: 20px; 
+}
+
+button {
+	padding: 10px 20px;
+	border-radius: 10px;
+	border: 1px solid blue;
+	background-color: #99CCFF;
+	margin-top: 20px;
+	margin-left: 40px;
+	margin-right: 40px;
+	min-width: 200px;
+	min-height: 50px;
+}
+
+form {
+	width: 80%;
+	margin: auto;
+	padding: 30px 40px;
+}

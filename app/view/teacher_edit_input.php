@@ -8,7 +8,7 @@ require '../controller/teacher_edit_input.php';
 <head>
 	<meta charset="utf-8">
 	<title>Sửa thông tin giáo viên</title>
-	<link rel="stylesheet" href="../../web/css/teacher_edit_input.css">
+	<link rel="stylesheet" href="../../web/css/teacher/teacher_edit_input.css">
 </head>
 
 <body>

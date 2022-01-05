@@ -8,7 +8,7 @@ require '../controller/teacher_edit_confirm.php';
 <head>
 	<meta charset="utf-8">
 	<title>Xác nhận tin giáo viên</title>
-	<link rel="stylesheet" href="../../web/css/teacher_edit_confirm.css">
+	<link rel="stylesheet" href="../../web/css/teacher/teacher_edit_confirm.css">
 </head>
 
 <body>

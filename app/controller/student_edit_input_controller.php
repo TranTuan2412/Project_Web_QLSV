@@ -3,8 +3,8 @@
     $nameStudent = $avatarStudent = $descriptionStudent = '';
     $error = array('errorName'=> '','errorAvatar'=>'','errorDescription'=>'');
     require "../common/db.php";
-    // $idStudent = $_GET['idStudent'];
-    $idStudent = 1;
+    $idStudent = $_GET['idStudent'];
+    // $idStudent = 1;
     require "../model/student.php";
     $_SESSION['idStudent'] = $idStudent;
     $_SESSION['student_edit_input'] = FALSE;

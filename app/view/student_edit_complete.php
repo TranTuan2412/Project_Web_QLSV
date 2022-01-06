@@ -9,10 +9,10 @@
     </head>
     <body>
         <div>
-            <div>
+            <div style="text-align:center;" >
                 <div>Bạn đã chỉnh sửa thành công sinh viên</div>
                 <br>
-                <span href="Location:home.php">Quay về trang chủ</span>
+                <a style="text-decoration: underline;" href="Location:home.php">Quay về trang chủ</a>
             </div>
         </div>
     </body>

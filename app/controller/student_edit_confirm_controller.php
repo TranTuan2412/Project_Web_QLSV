@@ -2,7 +2,7 @@
     session_start();
     require "../common/db.php";
     if(isset($_SESSION['student_edit_input'])||$_SESSION['student_edit_input']==FALSE){
-        // header("Location:home.php");
+        header("Location:home.php");
     }
     $_SESSION['student_edit_confirm'] = FALSE;
     $idStudent = $_SESSION['idStudent'];

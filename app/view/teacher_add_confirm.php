@@ -46,7 +46,7 @@
 						<div>Avatar</div>
 					</div>
 					<div class='labelinput'>
-						<input type="text" name="teacherAvatar" value="<?php echo $teacherAvatar ?>" disabled>
+						<img src="'../../web/image/' <?php echo $teacherAvatar?>" alt="logo"/>
 					</div>
 				</div>
 				<div class='sub-label'>
@@ -58,8 +58,32 @@
 					</div>
 				</div>
 				<div>
-					<button type="submit" name="button-1">Sửa lại</button>
-					<button type="submit" name="button-2">Đăng ký</button>
+					<button type="submit" name="button-edit">
+						Sửa lại
+						<?php
+							if(isset($_POST['button-edit'])) {
+								header('location:teacher_add_input.php');
+								exit();
+							 }
+						?>
+					</button>
+					<button type="submit" name="button-regist">
+						Đăng ký
+						<?php
+							require '../model/teacher.php';
+							$teacherName = $_GET['teacherName'];
+							$teacherSpecialized = $_GET['teacherSpecialized'];
+							$teacherDegree = $_GET['teacherDegree'];
+							$teacherAvatar = $_GET['teacherAvatar'];
+							$teacherDescription = $_GET['teacherDescription'];
+							if(isset($_POST['button-regist'])) {
+								$sql = "INSERT INTO `teachers` (`name`,`avatar`,`description`, `specialized`, `degree`) VALUES ('$teacherName', '$teacherAvatar', '$teacherDescription','$teacherSpecialized','$teacherDegree')";
+        						$connect->exec($sql);
+								header('location:teacher_add_complete.php');
+								exit();
+							 }
+						?>
+					</button>
 				</div>
 				</div>
 			</div>

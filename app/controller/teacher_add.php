@@ -32,10 +32,11 @@
 			$teacherDegree = $_POST['teacherDegree'];
 		}
 
-		if (empty($_POST['teacherAvatar'])) {
+		if (empty($_FILES['avatar']['name'])) {
 			$errors['teacherAvatar'] = 'Hãy chọn Avatar <br />';
 		} else{
-			$teacherAvatar = $_POST['teacherAvatar'];
+			$teacherAvatar = $_FILES['avatar']['name'];
+			move_uploaded_file($_FILES['avatar']['tmp_name'], '../../web/image/'.$teacherAvatar);
 		}
 
 		if (empty($_POST['teacherDescription'])) {

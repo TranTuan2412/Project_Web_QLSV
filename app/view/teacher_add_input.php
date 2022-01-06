@@ -22,7 +22,7 @@
 						<div>Họ và tên</div>
 					</div>
 					<div class='labelinput'>
-						<input type="text" name="teacherName" id="idName" value="<?php echo $teacherName; ?>">
+						<input type="text" name="teacherName" id="idName" maxlength="100" value="<?php echo $teacherName; ?>">
 						<span class="error" id="nameError"><?php echo $errors['teacherName']; ?></span>
 					</div>
 				</div>
@@ -63,20 +63,16 @@
 						<div>Avatar</div>
 					</div>
 					<div class='labelinput'>
-						<input name='avatar'>
-						<!-- <button type="file" name="uploadfile">Browse</button> -->
-					</div>
-
-					<div>
-
+						<input><input type="file" name="avatar" id="avatar">
+							<span class="error" id="avatarError"><?php echo $errors['teacherAvatar']; ?></span>
 					</div>
 				</div>
 				<div class='sub-label'>
 					<div class='labelinput'>
 						<div>Mô tả thêm</div>
 					</div>
-					<div class='labelinput-description'>
-						<input name="teacherDescription" id="idDescription" value="<?php echo $teacherDescription ?>">
+					<div class='labelinput labelinput-description'>
+						<textarea name="teacherDescription" id="idDescription" rows="8" cols="80" maxlength="1000" value="<?php echo $teacherDescription ?>"></textarea>
 						<span class="error" id="descriptionError"><?php echo $errors['teacherDescription']; ?></span>
 					</div>
 				</div>

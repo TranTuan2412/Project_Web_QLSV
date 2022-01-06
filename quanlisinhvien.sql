@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2021 at 05:14 PM
+-- Generation Time: Jan 06, 2022 at 12:07 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -98,8 +98,8 @@ CREATE TABLE `teachers` (
   `description` text NOT NULL,
   `specialized` char(10) NOT NULL,
   `degree` char(10) NOT NULL,
-  `updated` datetime NOT NULL,
-  `created` datetime NOT NULL
+  `updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -169,7 +169,7 @@ ALTER TABLE `subjects`
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,5 +1,6 @@
 <?php
     require '../model/student.php';
+    $name = $avatar = $des = null;
     $error = array('name' => '', 'avatar' => '', 'des' => '', 'commonErr' => '');
     
     foreach($result as $row) {
@@ -10,20 +11,25 @@
 
     if(isset($_POST['upload'])) {
         if(empty($_POST['name'])) {
-            $error['name'] = 'Hãy nhập tên sinh viên';
+            $error['name'] = '*Hãy nhập tên sinh viên';
             $name = null;
         } else {
-            $name = $_POST['name'];
+            if($_SESSION['name']) {
+                $name = $_SESSION['name'];
+            } else {
+                $name = $_POST['name'];
+                $_SESSION['name'] = $name;
+            }
         }
         if(empty($_FILES['avatar']['name'])) {
-            $error['avatar'] = 'Hãy chọn avatar';
+            $error['avatar'] = '*Hãy chọn avatar';
             $avatar = null;
         } else {
             $avatar = $_FILES['avatar']['name'];
             move_uploaded_file($_FILES['avatar']['tmp_name'], '../../web/avatar/'.$avatar);
         }
         if(empty($_POST['des'])) {
-            $error['des'] = 'Hãy nhập mô tả';
+            $error['des'] = '*Hãy nhập mô tả';
             $des = null;
         } else {
             $des = $_POST['des'];

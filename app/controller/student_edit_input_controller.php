@@ -7,6 +7,7 @@
     $idStudent = 1;
     require "../model/student.php";
     $_SESSION['idStudent'] = $idStudent;
+    $_SESSION['student_edit_input'] = FALSE;
     if($result->num_rows>0){
         while($row = $result->fetch_assoc()){
             $nameStudent = $row['name'];
@@ -45,9 +46,11 @@
             } else{
                 $_SESSION['uploadStudent'] = FALSE;
             }
-            $nameStudent = trim($_POST['studentName']);
-            $descriptionStudent = trim($_POST['studentDescription']);
-            header("Location:student_edit_confirm.php?nameStudent=$nameStudent&avatarStudent=$avatarStudent&descriptionStudent=$descriptionStudent");
+            $_SESSION['nameStudent'] = $nameStudent = trim($_POST['studentName']);
+            $_SESSION['descriptionStudent'] = $descriptionStudent = trim($_POST['studentDescription']);
+            $_SESSION['avatarStudent'] = $avatarStudent;
+            $_SESSION['student_edit_input'] = TRUE;
+            header("Location:student_edit_confirm.php");
         }
         
     }

@@ -115,7 +115,7 @@
                                             </dialog>
                                     <button type='button' 
                                             name='btnEdit' 
-                                            onclick='window.location.href="classsubject_edit_input.php?id="+"<?php echo $subject['id']?>"'
+                                            onclick='window.location.href="subject_edit_input.php?id="+"<?php echo $subject['id']?>"'
                                              >Sửa</button>
                                 </td>
                             </form>

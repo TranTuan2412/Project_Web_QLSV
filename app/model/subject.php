@@ -38,4 +38,24 @@
         $edit->execute();
         return $edit;
     }
+    function getsubject($id) {
+        global $conn;
+        $sql = "SELECT *
+                FROM subjects
+                WHERE id = '$id' ";
+        $subject = $conn->prepare($sql);
+        $subject->execute();
+        return $subject->fetch();
+    }
+    function updatesubject($id, $name,$avatar,$description,$school_year) {
+        global $conn;
+        $sql = "UPDATE subjects SET 
+                name = '$name',
+                avatar = '$avatar',
+                description = '$description',
+                school_year = '$school_year'
+                WHERE id = '$id' ";
+        $subject = $conn->prepare($sql);
+        return $subject->execute();
+    }
 ?>

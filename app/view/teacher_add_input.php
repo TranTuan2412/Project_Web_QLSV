@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Đăng ký thông tin giáo viên</title>
-	<link rel="stylesheet" href="../../web/teacher_add_input.css">
+	<link rel="stylesheet" href="../../web/css/teacher/teacher_add_input.css">
 </head>
 
 <body>

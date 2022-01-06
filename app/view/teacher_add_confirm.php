@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Xác nhận thông tin giáo viên</title>
-	<link rel="stylesheet" href="../../web/teacher_add_confirm.css">
+	<link rel="stylesheet" href="../../web/css/teacher/teacher_add_confirm.css">
 </head>
 <body>
 	<?php

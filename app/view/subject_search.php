@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../web/subject/subject_search.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- <title>Tìm kiếm môn học</title> -->
     <title>Tìm kiếm môn học</title>
 </head>
 <body>
@@ -88,6 +89,7 @@
                                         ?>
                                     <?php endforeach; ?>
                                 </td>
+                                
                                 <td><?php echo $subject['description']?></td>
                                 <td>
                                     <button type='button' 

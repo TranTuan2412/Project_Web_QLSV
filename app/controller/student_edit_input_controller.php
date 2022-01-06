@@ -8,13 +8,7 @@
     require "../model/student.php";
     $_SESSION['idStudent'] = $idStudent;
     $_SESSION['student_edit_input'] = FALSE;
-    if($result->num_rows>0){
-        while($row = $result->fetch_assoc()){
-            $nameStudent = $row['name'];
-            $avatarStudent = $row['avatar'];
-            $descriptionStudent = $row['description'];
-        }
-    }
+    
     $uploadStudent = TRUE;
     if(isset($_POST['submit'])){
         if (empty(trim($_POST['studentName']))){

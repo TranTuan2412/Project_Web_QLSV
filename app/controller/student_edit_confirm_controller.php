@@ -22,7 +22,8 @@
     }
     if(isset($_POST['next'])){
         if($_SESSION['uploadStudent']){
-            if(rename($oldPathFile,$newPathFile)&&$conn->query($qr)===TRUE){
+            if(rename($oldPathFile,$newPathFile)){
+                $conn->query($qr);
                 unset($_SESSION['student_edit_input']);
                 unset($_SESSION['idStudent']);
                 unset($_SESSION['avatarStudent']);
@@ -31,14 +32,14 @@
                 header("Location:student_edit_complete.php");
             }
         } else{
-            if($conn->query($qr)===TRUE){
+                $conn->query($qr);
                 unset($_SESSION['student_edit_input']);
                 unset($_SESSION['idStudent']);
                 unset($_SESSION['avatarStudent']);
                 unset($_SESSION['descriptionStudent']);
                 $_SESSION['student_edit_confirm'] = TRUE;
                 header("Location:student_edit_complete.php");
-            }
+            
         }
     }
 ?>

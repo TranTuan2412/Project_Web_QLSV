@@ -1,3 +1,6 @@
+<?php
+    require "../controller/student_edit_complete_controller.php";
+?>
 <html>
     <head>
         <meta charset="utf-8">

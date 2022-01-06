@@ -1,3 +1,6 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
 input{
     width: 85%;
     padding: 5px 5px;
@@ -6,8 +9,12 @@ input{
 }
 table{
     margin-top: 30px;
-    border:1px solid black;
     width: 100%;
+    text-align: center;
+}
+.center{
+    margin-left: auto;
+    margin-right: auto;
 }
 .content{
     position: relative;
@@ -18,11 +25,10 @@ table{
 }
 
 th,td{
-    border-right: 1px solid black;
     padding: 5px 10px !important;
 }
 tr{
-    border-bottom: 1px solid black;
+    text-align: center;
 }
 select{
     width: 85%;
@@ -52,12 +58,41 @@ tr > td:last-child > button{
     padding: 7px 15px;
     text-align: center;
     border:none;
-    width: 10%;
-    margin-left: 40%;
+    width: 20%;
+    margin-left: 115px;
 }
 .word{
     padding: 7px 10px;
     color: black;
     background-color: #FFFFFF;
     text-align: center;
+}
+dialog{
+    min-width:100px;
+    min-height:150px
+}
+.debai{
+    min-height: 100px;
+    margin: auto;
+    text-align: center;
+    line-height: 170px;
+    font-size: 24px;
+}
+.btn-style{
+    background-color:#d34039;
+    color: black;
+    border: none;    
+    font-size: 18px;
+    padding:12px 5px;
+    margin:0px 10px ;
+    min-width: 90px;
+}
+.btn1-style{
+    background-color: #4f81bd;
+    color: black;
+    border: none;    
+    font-size: 18px; 
+    padding:12px 5px;
+    margin:0px 10px ;
+    min-width: 90px;
 }

@@ -1,15 +1,18 @@
 <?php
     require '../model/subject.php';
-    if(isset($_POST['search']) ){
-        $data = trim($_POST['data']);
-        if($data === ''){
-            $sql = "SELECT * FROM `subjects` Where id";
-            $stu = $conn->prepare($sql);
-            $stu->execute();
-        }else{
-            $sql1 = "SELECT * FROM `subjects` Where `description` LIKE '%$data%' OR `name` LIKE '%$data%'";
-            $stu = $conn->prepare($sql1);
-            $stu->execute();
-        }
+    $rowAll=showTable();
+    if(isset($_GET['search'])){
+        $word = trim($_GET['filter']);
+        $school_year= $_GET['school_year'];
+        $rowAll = searchData($word, $school_year);
+    }
+
+    if(isset($_POST['delete'])){
+        $id = $_POST['infoID'];
+        deleteData($id);
+        $rowAll=showTable();
+        // $word = trim($_GET['filter']);
+        // $specialized= $_GET['specialized'];
+        // $rowAll = searchData($word, $specialized);
     }
 ?>

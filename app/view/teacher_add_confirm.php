@@ -8,11 +8,8 @@
 </head>
 <body>
 	<?php
-		$teacherName = $_GET['teacherName'];
-		$teacherSpecialized = $_GET['teacherSpecialized'];
-		$teacherDegree = $_GET['teacherDegree'];
-		$teacherAvatar = $_GET['teacherAvatar'];
-		$teacherDescription = $_GET['teacherDescription'];
+		require '../controller/teacher_add_confirm.php';
+
 	?>
 	<div class='container body'>
 		<form name='formSignUp' action='' method="POST" >
@@ -45,44 +42,28 @@
 				<div class='labelinput'>
 						<div>Avatar</div>
 					</div>
-					<div class='labelinput'>
-						<img src="'../../web/image/' <?php echo $teacherAvatar?>" alt="logo"/>
-					</div>
+					<?php
+						foreach ($images as $image) {
+							if (basename($image) == $teacherAvatar) {
+								echo "<img src='$image'/> ";
+							}
+						}
+					?>
 				</div>
 				<div class='sub-label'>
 				<div class='labelinput'>
 						<div>Mô tả thêm</div>
 					</div>
-					<div class='labelinput-description'>
-						<input name="teacherDescription" value="<?php echo $teacherDescription ?>" disabled>
+					<div class='labelinput labelinput-description'>
+						<textarea name="teacherDescription" rows="8" cols="80" maxlength="1000" disabled><?php echo $teacherDescription ?></textarea>
 					</div>
 				</div>
 				<div>
-					<button type="submit" name="button-edit">
+					<button type="button" name="button-edit" onclick="history.back()">
 						Sửa lại
-						<?php
-							if(isset($_POST['button-edit'])) {
-								header('location:teacher_add_input.php');
-								exit();
-							 }
-						?>
 					</button>
 					<button type="submit" name="button-regist">
 						Đăng ký
-						<?php
-							require '../model/teacher.php';
-							$teacherName = $_GET['teacherName'];
-							$teacherSpecialized = $_GET['teacherSpecialized'];
-							$teacherDegree = $_GET['teacherDegree'];
-							$teacherAvatar = $_GET['teacherAvatar'];
-							$teacherDescription = $_GET['teacherDescription'];
-							if(isset($_POST['button-regist'])) {
-								$sql = "INSERT INTO `teachers` (`name`,`avatar`,`description`, `specialized`, `degree`) VALUES ('$teacherName', '$teacherAvatar', '$teacherDescription','$teacherSpecialized','$teacherDegree')";
-        						$connect->exec($sql);
-								header('location:teacher_add_complete.php');
-								exit();
-							 }
-						?>
 					</button>
 				</div>
 				</div>

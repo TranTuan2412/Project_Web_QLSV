@@ -8,7 +8,11 @@
 </head>
 
 <body>
-
+	<script>
+		function uploadFile(target) {
+ 			document.getElementById("file-name").value = target.files[0].name;
+		}
+	</script>
 	<?php
 	require '../common/define.php';
 	require '../controller/teacher_add.php';
@@ -63,8 +67,15 @@
 						<div>Avatar</div>
 					</div>
 					<div class='labelinput'>
-						<input><input type="file" name="avatar" id="avatar">
-							<span class="error" id="avatarError"><?php echo $errors['teacherAvatar']; ?></span>
+						<input type="file" name="file" id="file" onchange="uploadFile(this)" />
+						<label for="file">
+
+							<input type="text" id="file-name" name="teacherAvatar" class="name-avatar" value="<?php echo $teacherAvatar; ?>">
+							<span class="custom-file-upload">
+								Browse
+							</span>
+						</label>
+						<span class="error" id="avatarError"><?php echo $errors['teacherAvatar']; ?></span>
 					</div>
 				</div>
 				<div class='sub-label'>

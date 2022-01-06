@@ -40,13 +40,12 @@
 	min-width: 250px;
 }
 
-.labelinput-description>input {
+.labelinput-description>textarea {
 	margin-right: 40px;
-	margin-top: 20px;
+	margin-top: 30px;
 	padding: 10px;
 	min-width: 550px;
 	min-height: 100px;
-	max-lines: 5;
 }
 
 button {
@@ -70,4 +69,11 @@ form {
 	width: 80%;
 	margin: auto;
 	padding: 30px 40px;
+}
+
+img {
+	display: flex;
+	max-width:100px;
+	max-height:100px;
+	margin-top: 20px;
 }

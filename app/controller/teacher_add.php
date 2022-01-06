@@ -3,14 +3,6 @@
 	$teacherName = $teacherSpecialized = $teacherDegree = $teacherAvatar = $teacherDescription = '';
 	$errors = array('teacherName' => '', 'teacherSpecialized' => '', 'teacherDegree' => '', 'teacherAvatar' => '', 'teacherDescription' => '');
 
-	foreach ($result as $row) {
-		$teacherName = $row['name'];
-		$teacherSpecialized = $row['specialized'];
-		$teacherDegree = $row['degree'];
-		$teacherAvatar = $row['avatar'];
-		$teacherDescription = $row['description'];
-	}
-
 	if (isset($_POST['submit'])) {
 
 		if (empty($_POST['teacherName'])) {
@@ -32,11 +24,11 @@
 			$teacherDegree = $_POST['teacherDegree'];
 		}
 
-		if (empty($_FILES['avatar']['name'])) {
+		if (empty($_POST['teacherAvatar'])) {
 			$errors['teacherAvatar'] = 'Hãy chọn Avatar <br />';
 		} else{
-			$teacherAvatar = $_FILES['avatar']['name'];
-			move_uploaded_file($_FILES['avatar']['tmp_name'], '../../web/image/'.$teacherAvatar);
+			$teacherAvatar = $_POST['teacherAvatar'];
+			move_uploaded_file($_FILES['teacherAvatar']['tmp_name'], '../../web/image/'.$teacherAvatar);
 		}
 
 		if (empty($_POST['teacherDescription'])) {
@@ -45,11 +37,17 @@
 		} else {
 			$teacherDescription = $_POST['teacherDescription'];
 		}
-
+		$filepath = "../../web/avatar/tmp/" . $_FILES["file"]["name"];
 		if (array_filter($errors)) {
 			// echo "Errors";
 		} else {
 			header("Location: teacher_add_confirm.php?teacherName=$teacherName&teacherSpecialized=$teacherSpecialized&teacherDegree=$teacherDegree&teacherAvatar=$teacherAvatar&teacherDescription=$teacherDescription");
+
+			if (move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) {
+				echo "DONE !!";
+			} else {
+				echo "Error !!";
+			}
 		}
 	}
 

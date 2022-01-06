@@ -9,6 +9,11 @@ class Router{
             case 'home':
                 require_once './app/controller/home.php';
                 break;
+
+            case 'search-score':
+                require_once './app/view/score_search.php';
+                break;
+
             default:
                 // require_once './app/view/home.php';
                 break;

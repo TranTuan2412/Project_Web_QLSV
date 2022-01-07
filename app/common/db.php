@@ -1,21 +1,12 @@
-<?php 
-    class DB{
-        private $host='localhost';
-        private $user ='root';
-        private $password ='';
-        private $DB ='quanlisinhvien';
-
-        public $__conn = null;
-
-        public function __construct(){
-            try {
-                $this->__conn = new PDO("mysql:host=$this->host;dbname=$this->DB", $this->user, $this->password);
-                $this->__conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                // echo "Connected successfully";
-              } catch(PDOException $e) {
-                echo "Connection failed: " . $e->getMessage();
-              }
-
-        }
-    }
+<?php
+$serverName = "localhost:3306";
+$username="root";
+$password="";
+$database="quanlisinhvien";
+try{
+    $conn = new PDO("mysql:host=$serverName;dbname=$database", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e){
+    echo "Connection failed". $e->getMessage();
+}
 ?>

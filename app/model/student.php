@@ -1,6 +1,6 @@
 <?php
 	require '../common/db.php';
-	$connectSqlStudent = 'SELECT * FROM `students`';
+	  $connectSqlStudent = 'SELECT * FROM `students`';
     $listStudents = $conn ->query($connectSqlStudent);
     $listStudents -> execute();
     
@@ -20,7 +20,6 @@
         $result->execute();
         // $conn->query($qr);
     }
-
     function deleteStudent($id) {
         global $conn;
         $query = $conn->prepare ("DELETE FROM students WHERE id=" . $id);
@@ -47,4 +46,7 @@
         $sql = "INSERT INTO `students` (`name`,`avatar`, `description`, `created`) VALUES ('$name','$avatar','$des','$created')";
         $conn->exec($sql);
     } 
+
+    $result = $conn->query("SELECT * FROM students WHERE id='2'");
+    $result->execute();
 ?>

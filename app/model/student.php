@@ -1,5 +1,15 @@
 <?php
     require "../common/db.php";
+
+
+
+
+
+
+
+
+
+
     function getData($id){
         global $conn;
         $qr = "SELECT * FROM students where id=$id";

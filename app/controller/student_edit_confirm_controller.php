@@ -1,45 +1,31 @@
 <?php
     session_start();
-    require "../common/db.php";
-    if(isset($_SESSION['student_edit_input'])||$_SESSION['student_edit_input']==FALSE){
-        header("Location:home.php");
+    require "../model/student.php";
+    if(isset($_SESSION['student_edit_input'])||$_SESSION['student_edit_input']==FALSE||$_GET['idStudent']){
+        // header("Location:home.php");
     }
     $_SESSION['student_edit_confirm'] = FALSE;
     $idStudent = $_SESSION['idStudent'];
-    $nameStudent = $_SESSION['nameStudent'];
-    $avatarStudent = $_SESSION['avatarStudent'];
-    $descriptionStudent = $_SESSION['descriptionStudent'];
-    if(isset($_POST['back'])){
-        header("Location:student_edit_input.php?idStudent=$idStudent");
-    }
-
+    $nameStudent = $_GET['nameStudent'];
+    $avatarStudent = $_GET['avatarStudent'];
+    $descriptionStudent = $_GET['descriptionStudent'];
     if($_SESSION['uploadStudent']){
-        $oldPathFile = "../../web/avatar/tmp/".$avatarStudent."";
-        $newPathFile = "../../web/avatar/".$idStudent."/".$avatarStudent."";
-        $qr = "UPDATE students SET name='".$nameStudent."',avatar='".$avatarStudent."',description='".$descriptionStudent."', updated= now() where id=".$idStudent."";
+        $dirImage = "../../web/avatar/tmp/$avatarStudent";
     } else{
-        $qr = "UPDATE students SET name='".$nameStudent."',description='".$descriptionStudent."', updated= now() where id=".$idStudent."";
+        $dirImage = "../../web/avatar/$idStudent/$avatarStudent";
     }
-    if(isset($_POST['next'])){
+    if(isset($_POST['button_next'])){
+        updateData($idStudent,$nameStudent,$descriptionStudent,$avatarStudent);
         if($_SESSION['uploadStudent']){
-            if(rename($oldPathFile,$newPathFile)){
-                $conn->query($qr);
-                unset($_SESSION['student_edit_input']);
-                unset($_SESSION['idStudent']);
-                unset($_SESSION['avatarStudent']);
-                unset($_SESSION['descriptionStudent']);
-                $_SESSION['student_edit_confirm'] = TRUE;
-                header("Location:student_edit_complete.php");
-            }
-        } else{
-                $conn->query($qr);
-                unset($_SESSION['student_edit_input']);
-                unset($_SESSION['idStudent']);
-                unset($_SESSION['avatarStudent']);
-                unset($_SESSION['descriptionStudent']);
-                $_SESSION['student_edit_confirm'] = TRUE;
-                header("Location:student_edit_complete.php");
-            
+            deleteAvatarTmp();
         }
+        $_SESSION['student_edit_confirm'] = TRUE;
+        header("Location:student_edit_complete.php");
+    }
+    function deleteAvatarTmp(){
+        $oldPath = "../../web/avatar/tmp/$avatarStudent";
+        $newPath = "../../web/avatar/$idStudent/$avatarStudent";
+        copy($oldPath,$newPath);
+        unlink("../../web/avatar/tmp/$avatarStudent");
     }
 ?>

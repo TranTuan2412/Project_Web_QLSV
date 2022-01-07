@@ -1,0 +1,102 @@
+.container {
+	width: 80%;
+	margin: auto;
+}
+.body {
+	border: 3px solid #1E90FF;
+}
+.sub-label {
+	display: flex;
+	width: 100%;
+	margin: auto;
+}
+
+.text-position {
+	text-align: center;
+}
+
+.labelinput {
+	margin-right: 50px;
+	margin-top: 25px;
+	min-width: 150px;
+}
+
+.border-label {
+	border: 1px solid #0000FF;
+}
+
+.color-label {
+	background-color: #1E90FF;
+}
+
+.labelinput>div {
+	padding: 10px 15px;
+}
+
+.labelinput>input, select {
+	padding: 8px 10px;
+	min-width: 250px;
+}
+
+.labelinput-description>textarea {
+	margin-right: 40px;
+	margin-top: 30px;
+	padding: 10px;
+	min-width: 550px;
+	min-height: 100px;
+}
+
+.error {
+    color: #FF0000;
+	display: flex;
+	padding-top: 5px;
+}
+
+button {
+	padding: 10px 20px;
+	border-radius: 10px;
+	border: 2px solid #0000FF;
+	background-color: #1E90FF;
+	margin-top: 20px;
+	margin-left: 40px;
+	margin-right: 40px;
+	min-width: 200px;
+	min-height: 50px;
+	color: #ffff;
+	font-size: 12pt;
+}
+button:hover{
+	cursor: pointer;
+}
+
+form {
+	width: 80%;
+	margin: auto;
+	padding: 30px 40px;
+}
+input[type="file"] {
+    display: none;
+}
+
+.name-avatar {
+	display: inline-block;
+	width: 250px;
+	border: 1px solid;
+	padding: 8px 10px;
+}
+
+.custom-file-upload {
+	border: 1px solid blue;
+	background-color: #99CCFF;
+    display: inline-block;
+	min-width: 100px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+img {
+	display: flex;
+	max-width:100px;
+	max-height:100px;
+	margin-bottom: 10px;
+}

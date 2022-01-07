@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <title>Chỉnh sửa thành công</title>
-        <link rel='stylesheet' href='../../web/css/student_edit.css'>
+        <link rel='stylesheet' href='../../web/css/student/student_edit.css'>
     </head>
     <body>
         <div>

@@ -8,8 +8,8 @@
         <link rel='stylesheet' href='../../web/css/student/student_edit.css'>
     </head>
     <body>
-        <div>
-            <div style="text-align:center;" >
+        <div class="main">
+            <div>
                 <div>Bạn đã chỉnh sửa thành công sinh viên</div>
                 <br>
                 <a style="text-decoration: underline;" href="Location:home.php">Quay về trang chủ</a>

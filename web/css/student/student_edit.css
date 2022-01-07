@@ -100,3 +100,13 @@ img {
 	max-height:100px;
 	margin-bottom: 10px;
 }
+.main{ 
+    border:1px solid #5a9bd5; 
+    text-align:center;
+    width:80%;
+    margin:auto;
+    margin-top: 200px;
+}
+.main  > div{
+    padding:100px 100px;
+}

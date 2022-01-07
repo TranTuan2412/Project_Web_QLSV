@@ -14,18 +14,21 @@
     } else{
         $dirImage = "../../web/avatar/$idStudent/$avatarStudent";
     }
-    if(isset($_POST['button_next'])){
-        updateData($idStudent,$nameStudent,$descriptionStudent,$avatarStudent);
-        if($_SESSION['uploadStudent']){
-            deleteAvatarTmp();
-        }
-        $_SESSION['student_edit_confirm'] = TRUE;
-        header("Location:student_edit_complete.php");
-    }
-    function deleteAvatarTmp(){
+
+    function deleteAvatarTmp($idStudent,$avatarStudent){
         $oldPath = "../../web/avatar/tmp/$avatarStudent";
         $newPath = "../../web/avatar/$idStudent/$avatarStudent";
         copy($oldPath,$newPath);
         unlink("../../web/avatar/tmp/$avatarStudent");
     }
+
+    if(isset($_POST['button_next'])){
+        updateData($idStudent,$nameStudent,$descriptionStudent,$avatarStudent);
+        if($_SESSION['uploadStudent']){
+            deleteAvatarTmp($idStudent,$avatarStudent);
+        }
+        $_SESSION['student_edit_confirm'] = TRUE;
+        header("Location:student_edit_complete.php");
+    }
+    
 ?>

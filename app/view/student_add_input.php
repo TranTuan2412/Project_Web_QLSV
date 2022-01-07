@@ -14,7 +14,7 @@
 <body>
     <div class="box container">
         <form class="mt-5 mb-5" action="" method="POST" enctype="multipart/form-data">
-            <!-- <h1>THÊM SINH VIÊN</h1> -->
+            <h1 class="mb-3">THÊM SINH VIÊN</h1>
             <div> 
                 <div class="mb-3 row">
                     <label class="col-3">Họ và tên</label>
@@ -27,7 +27,7 @@
                     <label class="col-3">Avatar</label>
                     <div class="col-9">
                         <input type="file" name="file" id="file" onchange="uploadFile(this)"/>
-						<label for="file">
+						<label for="file" class="avatar-field">
 							<input type="text" id="file-name" name="avatar" class="input-field" value="<?php echo $avatar; ?>" disabled>
 							<span class="btn btn-primary">
 								Browse
@@ -39,7 +39,7 @@
                 <div class="mb-3 row">
                     <label class="col-3">Mô tả thêm</label>
                     <div class="col-9">
-                        <textarea name="des" rows="9" cols="60" maxlength="1000" placeholder="Nhập tối đa 100 ký tự"></textarea>
+                        <textarea name="des" rows="9" cols="60" maxlength="1000" placeholder="Nhập tối đa 1000 ký tự"></textarea>
                         <div class="error-text"><?php echo $error['des']?></div>
                     </div>
                 </div>
@@ -50,10 +50,6 @@
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script>
-        function uploadFile(target) {
-            document.getElementById("file-name").value = target.files[0].name;
-        }
-    </script>
+    <script src="../../web/js/student_add.js"></script>
 </body>
 </html>

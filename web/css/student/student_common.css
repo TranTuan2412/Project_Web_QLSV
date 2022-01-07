@@ -5,9 +5,12 @@ body {
 .box {
   border: 2px solid #788ea8;
   position: absolute;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   left: 50%;
-  top:50%
+  top: 50%;
+}
+.box h1 {
+  text-align: center;
 }
 .box form {
   margin: 0 auto;
@@ -16,7 +19,9 @@ body {
 input:focus {
   outline: none;
 }
-
+textarea:focus {
+  outline: none;
+}
 .field-container {
   display: flex;
   justify-content: space-between;
@@ -33,7 +38,7 @@ input:focus {
 .btn-submit {
   width: 200px;
   height: 70px;
-  margin: 0 auto;
+  margin: 0 10px;
 }
 .btn-pos {
   text-align: center;
@@ -43,27 +48,30 @@ input:focus {
   text-align: center;
 }
 input[type="file"] {
-    display: none;
+  display: none;
 }
 
 .name-avatar {
-	display: inline-block;
-	width: 250px;
-	border: 1px solid;
-	padding: 8px 10px;
+  display: inline-block;
+  width: 250px;
+  border: 1px solid;
+  padding: 8px 10px;
 }
 
 .custom-file-upload {
   border: 1px solid blue;
-	background-color: #99CCFF;
+  background-color: #99ccff;
   display: inline-block;
-	min-width: 100px;
+  min-width: 100px;
   padding: 6px 12px;
   cursor: pointer;
 }
 
 img {
-	display: flex; 
-	max-width:200px; 
-	max-height:200px;
+  display: flex;
+  max-width: 300px;
+  max-height: 300px;
+}
+.avatar-field {
+  display: flex;
 }

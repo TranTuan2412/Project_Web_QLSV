@@ -15,7 +15,7 @@
   <div class="box container">
     <form class="mt-5 mb-5" action="" method="POST" enctype="multipart/form-data">
         <div>
-            <!-- <h2>Xác nhận thêm sinh viên</h2> -->
+            <h1 class="mb-3">Xác nhận thêm sinh viên</h1>
             <div class="mb-3 row">
                 <label class="col-3">Họ và tên</label>
                  <div class="col-9">

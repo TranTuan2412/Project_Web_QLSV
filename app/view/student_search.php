@@ -11,6 +11,7 @@
 <body>
     <?php
         require '../controller/student_search.php';
+        require '../common/define.php';
     ?>
     <div class="search-student container">
         <div class="">
@@ -78,7 +79,7 @@
         document.getElementById('student-<?php echo $student['id']?>').close();
     }
     function nextPageEdit(){
-        window.location.href="student_edit_input.php?idStudent=<?php echo $student['id'] ?>"
+        window.location.href="student_edit.php?idStudent=<?php echo $student['id'] ?>"
     }
 </script>
 </html>

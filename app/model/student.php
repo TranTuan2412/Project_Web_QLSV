@@ -1,9 +1,25 @@
 <?php
 	require '../common/db.php';
-	$connectSqlStudent = 'SELECT * FROM `students`';
+	  $connectSqlStudent = 'SELECT * FROM `students`';
     $listStudents = $conn ->query($connectSqlStudent);
     $listStudents -> execute();
     
+    function getData($id){
+        global $conn;
+        $qr = "SELECT * FROM students where id=$id";
+        $result = $conn->prepare($qr);
+        $result->execute();
+        // $reponse = $conn->query($qr);
+        // $result = $reponse->fetch_assoc();
+        return $result;
+    }
+    function updateData($id,$name,$description,$avatar){
+        global $conn;
+        $qr = "UPDATE students SET name='$name', avatar='$avatar', description='$description', updated= now() WHERE id=$id";
+        $result = $conn->query($qr);
+        $result->execute();
+        // $conn->query($qr);
+    }
     function deleteStudent($id) {
         global $conn;
         $query = $conn->prepare ("DELETE FROM students WHERE id=" . $id);
@@ -24,10 +40,13 @@
         $rowAll = $query->fetchAll();
         return $rowAll;
     }
+    function add_student($name,$avatar,$des) {
+        global $conn;
+        $created = date("Y-m-d h:i:s");
+        $sql = "INSERT INTO `students` (`name`,`avatar`, `description`, `created`) VALUES ('$name','$avatar','$des','$created')";
+        $conn->exec($sql);
+    } 
+
     $result = $conn->query("SELECT * FROM students WHERE id='2'");
     $result->execute();
-    // function add_student($name,$avatar,$des) {
-    //     $sql = "INSERT INTO `students` (`name`,`avatar`, `description`) VALUES ('$avatar')";
-    //     $conn->exec($sql);
-    // } 
 ?>

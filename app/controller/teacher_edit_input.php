@@ -81,7 +81,7 @@ if (isset($_POST['submit'])) {
 
 <?php
 
-$dirname = "../../web/avatar/";
+$dirname = "../../web/avatar/teacher/$id/";
 $images = glob($dirname . "*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}", GLOB_BRACE);
 
 ?>

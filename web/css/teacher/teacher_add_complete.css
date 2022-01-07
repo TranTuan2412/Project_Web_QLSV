@@ -1,0 +1,21 @@
+
+.complete {
+    width: 50%;
+    height: 50%;
+    border: 2px solid #568fe3;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+.complete_noti {
+    color: black;
+    display: block;
+    text-align: center;
+    margin-top: 10%;
+    font-size: 150%;
+}
+
+.home_url {
+   color: #1E90FF;
+    margin-top: 2%;
+}

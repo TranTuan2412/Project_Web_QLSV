@@ -1,6 +1,9 @@
 <?php
-<<<<<<< HEAD
-    require "../common/db.php";
+	require '../common/db.php';
+	$connectSqlStudent = 'SELECT * FROM `students`';
+    $listStudents = $conn ->query($connectSqlStudent);
+    $listStudents -> execute();
+    
     function getData($id){
         global $conn;
         $qr = "SELECT * FROM students where id=$id";
@@ -17,12 +20,7 @@
         $result->execute();
         // $conn->query($qr);
     }
-=======
-	require '../common/db.php';
-	$connectSqlStudent = 'SELECT * FROM `students`';
-    $listStudents = $conn ->query($connectSqlStudent);
-    $listStudents -> execute();
-    
+
     function deleteStudent($id) {
         global $conn;
         $query = $conn->prepare ("DELETE FROM students WHERE id=" . $id);
@@ -49,5 +47,4 @@
         $sql = "INSERT INTO `students` (`name`,`avatar`, `description`, `created`) VALUES ('$name','$avatar','$des','$created')";
         $conn->exec($sql);
     } 
->>>>>>> origin/add-edit-student
 ?>

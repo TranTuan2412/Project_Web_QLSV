@@ -12,7 +12,7 @@
     <div class="box container">
         <div class="box-complete mt-5">
             <div>Bạn đã đăng ký thành công</div>
-            <a href="student_add_input.php">Trở về trang chủ</a>
+            <a href="home.php">Trở về trang chủ</a>
         </div>
     </div>
 </body>

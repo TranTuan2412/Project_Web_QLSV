@@ -60,7 +60,7 @@
                                     onclick="showDialog()">Xóa
                                 </button>
                                 <?php include('dialog-confirm/student_confirm.php'); ?>
-                                <button type='button' name='btnEdit' class="button-edits" onclick='nextPageEdit()'>Sửa</button>
+                                <button type='button' name='btnEdit' class="button-edits" onclick="location.href='student_edit_input.php?idStudent=<?php echo $student['id'] ?>'">Sửa</button>
                                 </td>
                             </form>
                         </tr>
@@ -76,9 +76,6 @@
     }
     function closeDialog(){
         document.getElementById('student-<?php echo $student['id']?>').close();
-    }
-    function nextPageEdit(){
-        window.location.href="student_edit_input.php?idStudent=<?php echo $student['id'] ?>"
     }
 </script>
 </html>

@@ -28,6 +28,7 @@
             deleteAvatarTmp($idStudent,$avatarStudent);
         }
         $_SESSION['student_edit_confirm'] = TRUE;
+        unset($_SESSION['uploadStudent']);
         header("Location:student_edit_complete.php");
     }
     

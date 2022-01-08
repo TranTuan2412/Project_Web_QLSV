@@ -25,6 +25,7 @@
             $nameStudent = "";
         } else if(strlen(trim($_POST['studentName'])) > 100){
             $error['errorName']= 'Hãy nhập dưới 100 ký tự <br>';
+            $nameStudent = "";
         } else {
             $nameStudent = trim($_POST['studentName']);
         }
@@ -33,6 +34,7 @@
             $descriptionStudent = "";
         } else if(strlen(trim($_POST['studentDescription']))>1000){
             $error['errorDescription'] = 'Hãy nhập dưới 1000 ký tự <br>';
+            $descriptionStudent = "";
         } else {
             $descriptionStudent = trim($_POST['studentDescription']);
         }

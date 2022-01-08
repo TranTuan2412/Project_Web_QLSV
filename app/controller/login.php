@@ -1,7 +1,6 @@
 <?php
-class Login{
-    public function __construct(){
-        $_SESSION['login']= '';
+$_SESSION['login']= '';
+require_once './app/model/admin.php';
 
         if(isset($_REQUEST['login-submit'])){
             // Nếu chưa nhập user
@@ -26,8 +25,8 @@ class Login{
                 require_once './app/model/admin.php';
                 $user = trim($_REQUEST['value-user']);
                 $password = $_REQUEST['value-password'];
-                $data = $Admin->select_All_Admin();
-                $result = $this->check($data, $user, $password);
+                $data = select_All_Admin();
+                $result = check($data, $user, $password);
                 if($result == null){
                     $_SESSION['login']= "Login id và password không đúng !!!";
                 }
@@ -39,9 +38,7 @@ class Login{
                 }
             }
         }
-    }
-
-    public function check($data, $user, $password){
+ function check($data, $user, $password){
         foreach($data as $row){
             if($row['login_id']==$user && $row['password']== md5($password)){
                 return $user;
@@ -49,8 +46,8 @@ class Login{
         }
         return null;
     }
-}
 
-$Login = new Login;
+
 
 require_once './app/view/login.php';
+?>

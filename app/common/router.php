@@ -20,8 +20,11 @@ class Router{
         }
     }
 }
-
+if(!isset($_SESSION[auth])||($_SESSION[auth])==FALSE){
 $path = isset($_REQUEST['router']) ? $_REQUEST['router'] : 'login';
+} else {
+    $path = 'home';
+}
 
 $router = new Router();
 $router-> setRouter($path);

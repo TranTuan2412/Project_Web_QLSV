@@ -33,7 +33,7 @@ require_once './app/model/admin.php';
                    
                 else  {
                     $_SESSION['login']= $result;
-                    
+                    $_SESSION['auth'] = TRUE;
                     header('location:'.URLROOT.'/?router=home');
                 }
             }

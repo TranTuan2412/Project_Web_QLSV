@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./web/css/base.css">
     <link rel="stylesheet" href="./web/css/login.css">
-    <title>Document</title>
+    <title>Quản lý điểm sinh viên</title>
     
 </head>
 <body>
-       <div class="timetable">
+       <div class="manage_score">
         <form class="form" action="" method="POST">
             <div class="main">
                 <div class="element">
                     <p class="message-error"><?php echo $_SESSION["login"]; ?></p>
                 </div>
                 <div class="element">
-                    <label for="login-user">Tên đăng nhập</label>
+                    <label for="login-user">Người dùng</label>
                     <input id="login-user" type="text" class="input-element" name="value-user">
                 </div>
                 <div class="element">
-                    <label for="login-password">Mật khẩu</label>
+                    <label for="login-password">Password</label>
                     <input id="login-password" type="password" class="input-element" name="value-password">
                 </div>
                 <div class="element">

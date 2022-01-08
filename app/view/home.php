@@ -45,7 +45,7 @@
                     <label><a href="app/view/student_add_input.php">Thêm mới</a> </label>
                     <label><a href="">Thêm mới</a> </label>
                 </div>
-                <form id="myform"></form>
+                <form id="myform" method="POST"></form>
                 <button type="button" form="myform" name="button-logout">
 						Đăng xuất
 			    </button>

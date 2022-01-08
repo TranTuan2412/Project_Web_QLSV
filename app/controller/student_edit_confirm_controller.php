@@ -7,13 +7,12 @@
     $avatarStudent = $_GET['avatarStudent'];
     $descriptionStudent = $_GET['descriptionStudent'];
 
-    if (file_exists("../../web/avatar/tmp/".$avatarStudent)) {
-        $dirname = "../../web/avatar/tmp/";
-        $images = glob($dirname . "*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}", GLOB_BRACE);
-    } else {
-        $dirname = "../../web/avatar/student/$idStudent";
-        $images = glob($dirname . "*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}", GLOB_BRACE);
+    if($_SESSION['uploadStudent']){
+        $dirImage = "../../web/avatar/tmp/$avatarStudent";
+    } else{
+        $dirImage = "../../web/avatar/$idStudent/$avatarStudent";
     }
+
 
     function deleteAvatarTmp($idStudent,$avatarStudent){
         $oldPath = "../../web/avatar/tmp/$avatarStudent";

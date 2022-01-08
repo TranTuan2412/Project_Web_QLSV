@@ -27,13 +27,7 @@ require '../../app/controller/student_edit_confirm_controller.php';
                         </div>
                         <div style='width: 50px;'></div>
                         <div class="labelinput">
-                        <?php
-					        foreach ($images as $image) {
-						    if (basename($image) == $avatarStudent) {
-							    echo "<img src='$image'/> ";
-						    }
-					    }
-					    ?>
+                            <img src="<?php echo $dirImage;?>">
                         </div>
                     </div>
         

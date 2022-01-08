@@ -28,13 +28,7 @@
                         </div>
                         <div style='width: 50px;'></div>
                         <div class='label-input'>
-                            <?php
-						    foreach ($images as $image) {
-							    if (basename($image) == $avatarStudent) {
-							    	echo "<img src='$image' id='ava'/> ";
-							    }
-						    }
-						    ?>
+                            <img src="<?php echo "../../web/avatar/student/$idStudent/$avatarStudent";?>">
                             <input type="file" name="file" id="file" onchange="uploadFile(this)" oninput='pic.src=window.URL.createObjectURL(this.files[0]);'/>
                             <label for="file">
                             <input type="text" id="file-name" name="avatarStudent" class="name-avatar" value="<?php echo $avatarStudent; ?>" disabled>

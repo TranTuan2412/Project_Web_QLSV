@@ -1,18 +1,25 @@
 <?php 
-require_once './app/common/db.php';
 
-class Admin extends DB{
-    public function select_All_Admin(){
+
+function select_All_Admin(){
+    require_once './app/common/db.php';
+        
         $sql = "SELECT * FROM admins";
-        return $this->conn->query($sql);        
+        $data = $conn -> prepare($sql);
+        $data -> execute();
+        return $data;        
     }
 
     
-    public function select_All_LoginId($login_id){
-        $sql = "SELECT * FROM admins where login_id='$login_id'";
-        return $this->conn->query($sql);   
-    }
-    
-}
+    function select_All_LoginId($login_id){
+    require_once './app/common/db.php';
+        $data = $conn -> prepare($sql);
+        $data -> execute();
+        return $data;        
+      
+    }  
 
-$Admin = new Admin();
+    
+?>
+
+

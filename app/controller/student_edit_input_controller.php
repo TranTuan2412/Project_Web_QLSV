@@ -3,9 +3,10 @@
     $idStudent = $nameStudent = $avatarStudent = $descriptionStudent = '';
     $error = array('errorName'=> '','errorAvatar'=>'','errorDescription'=>'');
     require "../model/student.php";
+
     if(isset($_GET['idStudent'])){
         $idStudent = $_GET['idStudent'];
-        $_SESSION['idStudent'] = $idStudent;
+        $_SESSION['idStudent'] = $_GET['idStudent'];
         if($idStudent != ''){
             $result = getData($idStudent);
         }
@@ -15,7 +16,7 @@
             $descriptionStudent = $row['description'];
         }
     }
-    // $idStudent = $_SESSION['idStudent'];
+    $idStudent = $_SESSION["idStudent"];
     $_SESSION['student_edit_input'] = FALSE;
     $uploadStudent = FALSE;
 
@@ -25,7 +26,6 @@
             $nameStudent = "";
         } else if(strlen(trim($_POST['studentName'])) > 100){
             $error['errorName']= 'Hãy nhập dưới 100 ký tự <br>';
-            $nameStudent = "";
         } else {
             $nameStudent = trim($_POST['studentName']);
         }
@@ -34,7 +34,6 @@
             $descriptionStudent = "";
         } else if(strlen(trim($_POST['studentDescription']))>1000){
             $error['errorDescription'] = 'Hãy nhập dưới 1000 ký tự <br>';
-            $descriptionStudent = "";
         } else {
             $descriptionStudent = trim($_POST['studentDescription']);
         }
@@ -52,7 +51,6 @@
                 $uploadStudent = FALSE;
             }
         }
-        
         if(!array_filter($error)){
             if(!empty($_FILES['file']['name'])){
                 move_uploaded_file($_FILES['file']['tmp_name'],$target_file);

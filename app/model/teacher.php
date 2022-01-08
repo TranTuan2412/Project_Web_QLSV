@@ -17,7 +17,7 @@
 
     function searchData($keyword, $specialized) {
         global $conn;
-        if( $specialized != "") {
+        if( $specialized != "none") {
             $query = $conn->prepare("SELECT * FROM `teachers` WHERE (`name` LIKE '%$keyword%' or `description` LIKE '%$keyword%' or `degree` LIKE '%$keyword%') and `specialized` = '$specialized' order by id");
             $query->execute();
         }else if ($keyword != ""){

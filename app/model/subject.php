@@ -17,7 +17,7 @@
     }
     function searchData($keyword, $school_year) {
         global $conn;
-        if( $school_year != "") {
+        if( $school_year != "none") {
             $stu = $conn->prepare("SELECT * FROM `subjects` WHERE (`name` LIKE '%$keyword%' or `description` LIKE '%$keyword%') and `school_year` = '$school_year' order by id");
             $stu->execute();
         }else if ($keyword != ""){

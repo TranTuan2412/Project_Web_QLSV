@@ -2,9 +2,9 @@
 require_once '../../app/common/define.php';
 require_once '../../app/model/subject.php';
 session_start();
-// if( $_SESSION['flag'] !='yes'){
-//     header("Location:subject_edit_input.php");
-// }  
+if($_SESSION['flag'] !='yes'){
+    header("Location:subject_search.php");
+}  
 $id = isset($_SESSION["subject_id"]) ? $_SESSION["subject_id"] : '';
 $subject = getsubject($id);
 $subject_name = isset($_SESSION["subject_name"]) ? $_SESSION["subject_name"] : '';
@@ -36,21 +36,19 @@ if (isset($_SESSION['subject_avatar'])) {
 
             <div type ='label' class='input'> <?php echo $subject_name; ?> </div>
         </div>
-        <div class="error_message">
-        </div>
         <div class='box'>
             <div class='label_box'>
                 Khóa học
             </div>
 
-            <div class='input'><?php echo $subject_school_year ? $listSchoolYear[$subject_school_year] : ''; ?> </div>
+            <div type='label' class='input'><?php echo $subject_school_year ? $listSchoolYear[$subject_school_year] : ''; ?> </div>
         </div>
-        <div class='box     description'>
+        <div class='box description'>
             <div class='label_box'>
                 Mô tả thêm
             </div>
 
-            <textarea readonly class='input_description'><?php echo $subject_description; ?></textarea>
+            <label class='input_description'><?php echo $subject_description; ?></label>
         </div>
 
         <div class='box avatar_box '>
@@ -60,15 +58,6 @@ if (isset($_SESSION['subject_avatar'])) {
 
             <img class='avatar' src="<?php echo $target_avatar_file; ?>" alt="subject's Avatar">
         </div>
-
-        <div class="error">
-        </div>
-
-        <div class='box'>
-        </div>
-
-
-
         <div class='button_row'>
             <div class="left_button">
                 <button class='submit_button ' id='redit_button' type="button" onclick="history.back()"> Sửa lại </button>

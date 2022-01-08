@@ -2,7 +2,7 @@
 require_once '../../app/common/define.php';
 require_once '../../app/model/subject.php';
 session_start();
-// $_SESSION['flag']='yes';
+$_SESSION['flag']='yes';
 $id = $_GET['id'];
 $_SESSION["subject_id"] = $id;
 $subject = getsubject($id);

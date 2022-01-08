@@ -7,7 +7,7 @@
     require_once '../../app/common/define.php';
     require_once '../../app/model/subject.php';
     session_start();
-    // $_SESSION['flag']='no';
+    $_SESSION['flag']='no';
     $id = isset($_SESSION["subject_id"]) ? $_SESSION["subject_id"] : '';
     $subject = getsubject($id);
     $subject_name = isset($_SESSION["subject_name"]) ? $_SESSION["subject_name"] : '';

@@ -57,7 +57,7 @@
                     <tr class="header">
                         <th style="text-align:center;">No</th>
                         <th style="text-align:center;">Tên môn học</th>
-                        <th style="text-align:center;">Khoa</th>
+                        <th style="text-align:center;">Khóa học</th>
                         <th style="text-align:center;">Mô tả chi tiết</th>
                         <th style="text-align:center;">Action</th>
                     </tr>
@@ -93,14 +93,14 @@
                                             <dialog id="my-dialog-<?php echo $subject['id']?>" style="border:1px solid #4da6ff ">
                                                     <div class="col-sm-12">
                                                         <div class="col-sm-12 delete">
-                                                            Bạn chắc chắn xóa môn học <?php echo $subject['name']?>?
+                                                            Bạn chắc chắn xóa phòng học <?php echo $subject['name']?>?
                                                             <input type="hidden" name="infoID" value="<?php echo $subject['id']?>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12" >
                                                         <div class="col-sm-8"></div>
                                                         <div class="col-sm-3"style="text-align:right;display:flex">
-                                                            <button  type="submit" id="oki" class="btn-confirm" name='delete'>Confirm</button>
+                                                            <button  type="submit" id="oki" class="btn-confirm" name='delete'>Ok</button>
                                                             <button type="button" id="close"  class="btn-cancel" 
                                                             onclick="document.getElementById('my-dialog-<?php echo $subject['id']?>').close();">Cancel</button>
                                                         </div>

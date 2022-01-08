@@ -19,7 +19,7 @@
     <div class="col-md-12" style="margin-top: 1rem;">
         <div class=" button-close-confirm" >
             <button type="submit" class="btn-submit" name='delete'>Confirm</button>
-            <button type="button" class="btn-close" onclick="closeDialog()" style="margin-left: 1rem;">Cancel</button>
+            <button type="button" class="btn-close" onclick="closeDialog(<?php echo $student['id']?>)" style="margin-left: 1rem;">Cancel</button>
         </div>
     </div>
 </dialog>

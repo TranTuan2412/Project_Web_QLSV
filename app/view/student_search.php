@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../web/student/student.css">
+    <link rel="stylesheet" href="../../web/student/student_search.css">
     <title>Tìm kiếm sinh viên</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
                         <div class="key-word">Từ Khóa</div>
                     </div>
                     <div class="col-md-8 col-lg-8 col-sm-8 col-xs-8">
-                        <input type="search" name="keyword">
+                        <input type="search" name="keyword" id="old-word">
                     </div>
                 </div>
                 
@@ -57,7 +57,7 @@
                                     name='btnDelete'
                                     id='dialogshow'
                                     class="btn-delete" 
-                                    onclick="showDialog()">Xóa
+                                    onclick="showDialog(<?php echo $student['id']?>)">Xóa
                                 </button>
                                 <?php include('dialog-confirm/student_confirm.php'); ?>
                                 <button type='button' name='btnEdit' class="button-edits" onclick="location.href='student_edit_input.php?idStudent=<?php echo $student['id'] ?>'">Sửa</button>
@@ -70,12 +70,6 @@
         </div>
     </div>
 </body>
-<script>
-    function showDialog(){
-        document.getElementById('student-<?php echo $student['id']?>').showModal();
-    }
-    function closeDialog(){
-        document.getElementById('student-<?php echo $student['id']?>').close();
-    }
-</script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="../../web/student/student_search.js"></script>
 </html>

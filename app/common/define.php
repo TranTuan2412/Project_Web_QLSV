@@ -1,11 +1,9 @@
 <?php
-<<<<<<< HEAD
 	$listSchoolYear = [
 		'01' => 'Năm 1',
 		'02' => 'Năm 2',
 		'03' => 'Năm 3',
 		'04' => 'Năm 4',
-=======
     $listSpecialized = [
 		'001' => 'Khoa Học Máy Tính',
 		'002' => 'Khoa Học Dữ Liệu',
@@ -18,6 +16,5 @@
 		'003' => 'Tiến sĩ',
 		'004' => 'Phó giáo sư',
 		'005' => 'Giáo sư',
->>>>>>> da68ba27b3bae411882cefa20cadb821c864bd6d
 	];
 ?>

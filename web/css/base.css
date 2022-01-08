@@ -1,0 +1,72 @@
+
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: inherit;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times;
+
+    
+}
+html{
+    box-sizing: border-box;
+
+}
+:root{
+    --color-border: rgb(19, 173, 109);
+    --color-error: #D8000C;
+    --background-color-error: #FFD2D2;
+    --color-info: #00529B;
+    --background-color-info:#BDE5F8;
+    --color-success: #4611c2;
+    --background-color-success:#DFF2BF;
+    --color-text:#fff;
+    --background-color-info2:rgb(175, 18, 18);
+    --color-warn: #b30b27;
+    --background-color-warn: #3e4b07;
+}
+
+.manage_score{
+    position: relative;
+    top:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+    
+}
+.form{
+    border: 1px solid var(--color-border);
+    padding: 10px;
+    border-radius: 3px;
+    background-color: var(--background-color-info);
+    
+}
+.main{
+    width: 1000px;
+}
+.element{
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.element label{
+    width: 160px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 3px;
+    box-shadow: 0 0 3px var(--background-color-info2);
+    background-color: var(--background-color-success);
+}
+.select-element,
+.option-element,
+.input-element,
+#description{
+    padding: 10px 15px;
+    width: 450px;
+    border: 1px solid var(--color-border);
+    border-radius: 2px;
+    outline: none;
+}

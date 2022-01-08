@@ -3,12 +3,12 @@
     $idStudent = $nameStudent = $avatarStudent = $descriptionStudent = '';
     $error = array('errorName'=> '','errorAvatar'=>'','errorDescription'=>'');
     require "../model/student.php";
-    
-    if(isset($_GET['idStudent'])){
-        $idStudent = $_GET['idStudent'];
+    $_GET['idStudent'] = 2;
+    if(!isset($_GET['idStudent'])){
+        $idStudent = 2;
         $_SESSION['idStudent'] = $idStudent;
         if($idStudent != ''){
-            $result = getData();
+            $result = getData($idStudent);
         }
         foreach($result as $row){
             $nameStudent = $row['name'];

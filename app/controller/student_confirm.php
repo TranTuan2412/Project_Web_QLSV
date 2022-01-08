@@ -14,8 +14,8 @@
     function deleteImgTmp($avatar){
         $id = getId();
         $file="../../web/avatar/tmp/$avatar";
-        mkdir("../../web/avatar/$id/", 777);
-        $newfile="../../web/avatar/$id/$avatar";
+        mkdir("../../web/avatar/student/$id/", 777);
+        $newfile="../../web/avatar/student/$id/$avatar";
         copy($file, $newfile);
         unlink("../../web/avatar/tmp/".$avatar);
     } 

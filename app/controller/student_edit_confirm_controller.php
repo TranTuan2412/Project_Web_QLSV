@@ -17,7 +17,7 @@
 
     function deleteAvatarTmp($idStudent,$avatarStudent){
         $oldPath = "../../web/avatar/tmp/$avatarStudent";
-        $newPath = "../../web/avatar/$idStudent/$avatarStudent";
+        $newPath = "../../web/avatar/student/$idStudent/$avatarStudent";
         copy($oldPath,$newPath);
         unlink("../../web/avatar/tmp/$avatarStudent");
     }

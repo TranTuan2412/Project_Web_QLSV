@@ -6,15 +6,15 @@ class Login{
         if(isset($_REQUEST['login-submit'])){
             // Nếu chưa nhập user
             if(empty($_REQUEST['value-user']) || trim($_REQUEST['value-user'])==''){
-                $_SESSION['login']= 'Chưa nhập user';
+                $_SESSION['login']= 'Hãy nhập login id';
             }
             // Nếu nhập user <4 ký tự
             else if(strlen(trim($_REQUEST['value-user']))<4){
-                $_SESSION['login']= 'Hãy nhập user tối thiểu 4 ký tự';
+                $_SESSION['login']= 'Hãy nhập login id tối thiểu 4 ký tự';
             }
             // Nếu chưa nhập password
             else if(empty($_REQUEST['value-password']) || trim($_REQUEST['value-password'])==''){
-                $_SESSION['login']= 'Chưa nhập password';
+                $_SESSION['login']= 'Hãy nhập password';
             }
             // Nếu nhập password < 6 ký tự
             else if(strlen(trim($_REQUEST['value-password']))<6){
@@ -23,18 +23,18 @@ class Login{
             }
             else{
                 
-                require_once './app/models/admin.php';
+                require_once './app/model/admin.php';
                 $user = trim($_REQUEST['value-user']);
                 $password = $_REQUEST['value-password'];
                 $data = $Admin->select_All_Admin();
                 $result = $this->check($data, $user, $password);
                 if($result == null){
-                    $_SESSION['login']= "Sai username hoặc mật khẩu, vui lòng nhập lại !!!";
+                    $_SESSION['login']= "Login id và password không đúng !!!";
                 }
                    
                 else  {
                     $_SESSION['login']= $result;
-                    // header("location:http://localhost/manage_timetable/?router=home");
+                    
                     header('location:'.URLROOT.'/?router=home');
                 }
             }
@@ -53,4 +53,4 @@ class Login{
 
 $Login = new Login;
 
-require_once './app/views/login.php';// Đặt view vào sau để SESSION được cập nhật
+require_once './app/view/login.php';

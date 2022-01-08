@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./web/css/base.css">
-    <title>Document</title>
+    <title>Quản lý điểm sinh viên</title>
 </head>
 <body>
     
-    <div class="timetable">
+    <div class="manage_score">
         <div class="form">
             <div class="main">
                 <div class="element">
@@ -24,23 +24,26 @@
                             echo date('d/m/Y') . " ". date("h:i");?>
                     </p>
                 </div>
-                <div class="element">                  
+                <div class="element">
+                    <label><b>Phòng học</b></label>                  
                     <label><b>Giáo viên</b></label>
-                    <label><b>Sinh viên</b></label>
-                    <label><b>Môn học</b></label> 
-                    <label><b>Quản lý điểm</b></label>           
+                    <label><b>Môn học</b></label>
+                    <label><b>Sinh viên</b></label> 
+                    <label><b>Điểm</b></label>           
                 </div>
                 <div class="element">
+                    <label><a href="?router=search-classroom">Tìm kiếm</a> </label>
                     <label><a href="?router=search-teacher">Tìm kiếm</a> </label>
                     <label><a href="?router=search-subject">Tìm kiếm</a></label>
-                    <label><a href="?router=search-schedule">Tìm kiếm</a></label>
-                     <label><a href="?router=search-scores">Tìm kiếm</a></label>
+                    <label><a href="?router=search-student">Tìm kiếm</a></label>
+                     <label><a href="?router=search-score">Tìm kiếm</a></label>
                 </div>
                 <div class="element">
+                    <label><a href="?router=add-classroom">Thêm mới</a> </label>
                     <label><a href="?router=add-teacher">Thêm mới</a> </label>
                     <label><a href="?router=add-subject">Thêm mới</a> </label>
-                    <label><a href="?router=edit-schedule">Sửa</a> </label>
-                    <label><a href="?router=edit-scores">Sửa</a> </label>
+                    <label><a href="?router=edit-student">Thêm mới</a> </label>
+                    <label><a href="?router=edit-score">Thêm điểm</a> </label>
                 </div>
                 <div class="element">
                     <a href="?">Đăng xuất</a>

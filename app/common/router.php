@@ -3,14 +3,14 @@ class Router{
     public function setRouter($path){
         switch ($path) {
             case 'login':
-                require_once './app/controllers/login.php';
+                require_once './app/controller/login.php';
                 break;
         
             case 'home':
-                require_once './app/controllers/home.php';
+                require_once './app/controller/home.php';
                 break;
             default:
-                // require_once './app/views/home.php';
+                // require_once './app/view/home.php';
                 break;
         }
     }

@@ -34,7 +34,6 @@
                             <input type="text" id="file-name" name="avatarStudent" class="name-avatar" value="<?php echo $avatarStudent; ?>" disabled>
                                 <span class="custom-upload-file">Browse</span>
                             </label>
-                            <span class="error" id="avatarError"><?php echo $errors['errorAvatar']; ?></span>
                         </div>
                     </div>
         

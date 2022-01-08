@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             isset($_SESSION["subject_avatar"]) &&
             $_FILES["subject_avatar"]["name"] != $_SESSION["subject_avatar"]
         ) {
-            unlink('../../web/avatar/subject_tmp/' . $_SESSION["subject_avatar"]);
+            unlink('../../web/avatar/tmp/' . $_SESSION["subject_avatar"]);
         }
         $_SESSION["subject_avatar"] = $_FILES["subject_avatar"]["name"];
     }
@@ -46,8 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!isset($_SESSION["subject_avatar"]) && !$_SESSION["cur_subject_avatar"]) {
         $_SESSION["subject_avatar_error"] = "Hãy chọn avatar.";
     }
-    if (!file_exists('../../../web/avatar/subject_tmp')) {
-        mkdir('../../../web/avatar/subject_tmp', 0777, true);
+    if (!file_exists('../../../web/avatar/tmp')) {
+        mkdir('../../../web/avatar/tmp', 0777, true);
     }
     if (!isset($_SESSION['had_avatar'])) {
         if (
@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if (isset($_SESSION["subject_avatar"])) {
-            $target_dir = "../../web/avatar/subject_tmp/";
+            $target_dir = "../../web/avatar/tmp/";
             $target_file = $target_dir . basename($_FILES["subject_avatar"]["name"]);
             move_uploaded_file($_FILES["subject_avatar"]["tmp_name"], $target_file);
             $_SESSION['had_avatar'] = true;

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../web/student/student_search.css">
+    <link rel="stylesheet" href="../../web/css/student/student_search.css">
     <title>Tìm kiếm sinh viên</title>
 </head>
 <body>
@@ -71,5 +71,5 @@
     </div>
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script src="../../web/student/student_search.js"></script>
+<script src="../../web/js/student_search.js"></script>
 </html>

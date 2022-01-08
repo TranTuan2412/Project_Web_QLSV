@@ -12,7 +12,7 @@
             <div>
                 <div>Bạn đã chỉnh sửa thành công sinh viên</div>
                 <br>
-                <a style="text-decoration: underline;" href="Location:home.php">Quay về trang chủ</a>
+                <a style="text-decoration: underline;" href="home.php">Quay về trang chủ</a>
             </div>
         </div>
     </body>

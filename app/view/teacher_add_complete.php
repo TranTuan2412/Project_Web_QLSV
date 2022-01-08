@@ -9,7 +9,7 @@
 <body>
 	<div class='complete'>
     	<div class="complete_noti"> Bạn đã đăng ký thông tin giáo viên thành công!</div>
-    	<a class="complete_noti home_url" href="home.php"> <i> Trở về trang chủ </i> </a>
+    	<a class="complete_noti home_url" href="?router=home"> <i> Trở về trang chủ </i> </a>
 	</div>
 </body>
 </html>

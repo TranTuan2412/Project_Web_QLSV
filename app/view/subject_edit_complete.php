@@ -2,7 +2,7 @@
 
 <head>
     <title>Sửa thông tin môn học</title>
-    <link rel="stylesheet" href="../../web/subject/subject_edit_styles.css">
+    <link rel="stylesheet" href="../../web/css/subject/subject_edit_styles.css">
 </head>
 <?php
     require_once '../../app/common/define.php';

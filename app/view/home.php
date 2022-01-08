@@ -32,18 +32,18 @@
                     <label><b>Điểm</b></label>           
                 </div>
                 <div class="element">
-                    <label><a href="?router=search-classroom">Tìm kiếm</a> </label>
-                    <label><a href="app/view/teacher_search.php">Tìm kiếm</a> </label>
+                    <label><a href="">Tìm kiếm</a> </label>
+                    <label><a href="app/view/teacher_search_input.php">Tìm kiếm</a> </label>
                     <label><a href="app/view/subject_search.php">Tìm kiếm</a></label>
                     <label><a href="app/view/student_search.php">Tìm kiếm</a></label>
                      <label><a href="app/view/score_search.php">Tìm kiếm</a></label>
                 </div>
                 <div class="element">
-                    <label><a href="?router=add-classroom">Thêm mới</a> </label>
-                    <label><a href="?router=add-teacher">Thêm mới</a> </label>
-                    <label><a href="?router=add-subject">Thêm mới</a> </label>
-                    <label><a href="?router=edit-student">Thêm mới</a> </label>
-                    <label><a href="?router=edit-score">Thêm điểm</a> </label>
+                    <label><a href="">Thêm mới</a> </label>
+                    <label><a href="app/view/teacher_add_input.php">Thêm mới</a> </label>
+                    <label><a href="">Thêm mới</a> </label>
+                    <label><a href="app/view/student_add_input.php">Thêm mới</a> </label>
+                    <label><a href="">Thêm mới</a> </label>
                 </div>
                 <div class="element">
                     <a href="?">Đăng xuất</a>

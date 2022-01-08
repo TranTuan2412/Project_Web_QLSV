@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../web/score/score_search.css">
+    <link rel="stylesheet" href="../../web/css/score/score_search.css">
     <title>Tìm kiếm điểm</title>
 </head>
 <body>

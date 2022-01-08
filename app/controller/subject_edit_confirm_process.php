@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             unlink('../../web/avatar/subject/' . $id . '/' . $subject_avatar); 
         }
         $subject_avatar = $_SESSION['subject_avatar']; 
-        $cur_avatar_dir = '../../web/avatar/subject_tmp/' . $_SESSION['subject_avatar'];
+        $cur_avatar_dir = '../../web/avatar/tmp/' . $_SESSION['subject_avatar'];
         $target_avatar_dir = '../../web/avatar/subject/' . $id . '/' . $_SESSION['subject_avatar'];
         if (!file_exists('../../web/avatar/subject/' . $id)) {
             mkdir('../../web/avatar/subject/' . $id, 0777, true);

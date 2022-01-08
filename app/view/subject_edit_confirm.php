@@ -13,7 +13,7 @@ $subject_description = isset($_SESSION["subject_description"]) ? $_SESSION['subj
 $subject_avatar = '';
 if (isset($_SESSION['subject_avatar'])) {
     $subject_avatar = $_SESSION['subject_avatar'];
-    $target_avatar_file = '../../web/avatar/subject_tmp/'.$_SESSION['subject_avatar'];
+    $target_avatar_file = '../../web/avatar/tmp/'.$_SESSION['subject_avatar'];
 } else {
     $target_avatar_file = '../../web/avatar/subject/'.$id.'/'.$subject['avatar'];
 }
@@ -24,8 +24,8 @@ if (isset($_SESSION['subject_avatar'])) {
 
 <head>
     <title>Sửa thông tin môn học</title>
-    <link rel="stylesheet" href="../../web/subject/subject_edit_styles.css">
-    <script src="../../web/subject/subject_edit_scripts.js"></script>
+    <link rel="stylesheet" href="../../web/css/subject/subject_edit_styles.css">
+    <script src="../../web/js/subject_edit_scripts.js"></script>
 </head>
 
 <form method='post' action='../../app/controller/subject_edit_confirm_process.php' enctype="multipart/form-data">

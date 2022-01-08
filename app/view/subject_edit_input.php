@@ -37,8 +37,8 @@ $subject_avatar_error = $_SESSION["subject_avatar_error"] ?? '';
 
 <head>
     <title>Sửa thông tin môn học</title>
-    <link rel="stylesheet" href="../../web/subject/subject_edit_styles.css">
-    <script src="../../web/subject/subject_edit_scripts.js"></script>
+    <link rel="stylesheet" href="../../web/css/subject/subject_edit_styles.css">
+    <script src="../../web/js/subject_edit_scripts.js"></script>
 </head>
 
 <form method='post' action='../../app/controller/subject_edit_input_process.php' enctype="multipart/form-data">

@@ -12,7 +12,7 @@
     if($_SESSION['uploadStudent']){
         $dirImage = "../../web/avatar/tmp/$avatarStudent";
     } else{
-        $dirImage = "../../web/avatar/$idStudent/$avatarStudent";
+        $dirImage = "../../web/avatar/student/$idStudent/$avatarStudent";
     }
 
     function deleteAvatarTmp($idStudent,$avatarStudent){

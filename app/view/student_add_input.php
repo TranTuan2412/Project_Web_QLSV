@@ -39,7 +39,7 @@
                 <div class="mb-3 row">
                     <label class="col-3">Mô tả thêm</label>
                     <div class="col-9">
-                        <textarea name="des" rows="9" cols="60" maxlength="1000" placeholder="Nhập tối đa 1000 ký tự"></textarea>
+                        <textarea name="des" rows="9" cols="60" placeholder="Nhập tối đa 1000 ký tự"></textarea>
                         <div class="error-text"><?php echo $error['des']?></div>
                     </div>
                 </div>

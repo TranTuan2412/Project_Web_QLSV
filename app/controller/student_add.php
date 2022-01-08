@@ -7,7 +7,9 @@
         if(empty($_POST['name'])) {
             $error['name'] = '*Hãy nhập tên sinh viên';
             $name = null;
-        } else {
+        } else if(strlen(trim($_POST['name']))>100) {
+            $error['name'] = '* Không được nhập quá 100 ký tự';
+        } else{
             $name = $_POST['name'];
         }
         if (empty($_FILES["file"]["name"])) {
@@ -22,6 +24,8 @@
         if(empty($_POST['des'])) {
             $error['des'] = '*Hãy nhập mô tả';
             $des = null;
+        } else if(strlen(trim($_POST['des']))>1000) {
+            $error['des'] = '* Không được nhập quá 1000 ký tự';
         } else {
             $des = $_POST['des'];
         }

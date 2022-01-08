@@ -1,15 +1,13 @@
 <?php
     session_start();
-    $nameStudent = $avatarStudent = $descriptionStudent = '';
+    $idStudent = $nameStudent = $avatarStudent = $descriptionStudent = '';
     $error = array('errorName'=> '','errorAvatar'=>'','errorDescription'=>'');
-    require "../common/db.php";
     require "../model/student.php";
-    // $_GET['idStudent']= 2;
-    if(isset($_GET['idStudent'])){
-        $idStudent = $_GET['idStudent'];
+    if(!isset($_GET['idStudent'])){
+        $idStudent = 2;
         $_SESSION['idStudent'] = $idStudent;
         if($idStudent != ''){
-            $result = getData();
+            $result = getData($idStudent);
         }
         foreach($result as $row){
             $nameStudent = $row['name'];
@@ -17,20 +15,7 @@
             $descriptionStudent = $row['description'];
         }
     }
-    // $idStudent = 2;
-    // $_SESSION['idStudent'] = $idStudent;
-    // if($idStudent != ''){
-    //     $qr = "SELECT * FROM students where id=$idStudent";
-    //     $reponse = $conn->query($qr);
-    //     if($reponse->num_rows>0){
-    //         while($row = $reponse->fetch_assoc()){
-    //             $nameStudent = $row['name'];
-    //             $avatarStudent = $row['avatar'];
-    //             $descriptionStudent = $row['description'];
-    //         }
-    //     }
-    // }
-
+    $idStudent = $_SESSION['idStudent'];
     $_SESSION['student_edit_input'] = FALSE;
     $uploadStudent = FALSE;
 

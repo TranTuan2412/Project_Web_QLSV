@@ -11,36 +11,34 @@
 <body>
     <?php
         require '../controller/student_search.php';
-        require '../common/define.php';
     ?>
     <div class="search-student container">
-        <div class="">
+        <div class="form-searchs">
             <form name='search' method='GET'>
                 <div class="key-input">
-                    <div class="col-sm-2">
+                    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
                         <div class="key-word">Từ Khóa</div>
                     </div>
-                    <div class="col-sm-10">
-                        <input type="search" name="keyword" class="filter">
+                    <div class="col-md-8 col-lg-8 col-sm-8 col-xs-8">
+                        <input type="search" name="keyword">
                     </div>
                 </div>
                 
-                <div class="col-md-12 button-css ">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 button-css ">
                         <button  type="submit" class="button-search"  id="btn-search" name="search" >Tìm Kiếm</button>
                 </div>
-
             </form>
-            <div class="col-md-12">Tìm thấy <?php echo count($allStudents) ?> sinh viên </div>
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 count-st" >Số sinh viên tìm thấy <?php echo count($allStudents) ?></div>
             <div class="">
-                <table class="">
-                    <tr class="">
-                        <th style="width:5%;">No
+                <table class="show-search">
+                    <tr class="show-search">
+                        <th class="class-no">No
                         </th>
-                        <th style="width:35%;">Tên sinh viên
+                        <th class="class-name">Tên sinh viên
                         </th>
-                        <th style="width:40%;">Mô tả chi tiết
+                        <th class="class-des">Mô tả chi tiết
                         </th>
-                        <th style="width:20%;"> Action
+                        <th class="class-ac"> Action
                         </th>
                     </tr>
                     <?php foreach ($allStudents as $student) : ?>
@@ -55,13 +53,14 @@
                                 </td>
                                 <td><?php echo $student['description']?></td>
                                 <td class="edit-delete">
-                                <button type='button' 
+                                <button type='button' class="button-deletes"
                                     name='btnDelete'
-                                    id='dialogshow' 
+                                    id='dialogshow'
+                                    class="btn-delete" 
                                     onclick="showDialog()">Xóa
                                 </button>
                                 <?php include('dialog-confirm/student_confirm.php'); ?>
-                                <button type='button' name='btnEdit' onclick='nextPageEdit()'>Sửa</button>
+                                <button type='button' name='btnEdit' class="button-edits" onclick='nextPageEdit()'>Sửa</button>
                                 </td>
                             </form>
                         </tr>

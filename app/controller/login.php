@@ -43,7 +43,7 @@ class Login{
 
     public function check($data, $user, $password){
         foreach($data as $row){
-            if($row['login_id']==$user && $row['password']== $password){
+            if($row['login_id']==$user && $row['password']== md5($password)){
                 return $user;
             }
         }

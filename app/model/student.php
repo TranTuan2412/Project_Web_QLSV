@@ -47,6 +47,4 @@
         $invNum = $id -> fetch(PDO::FETCH_ASSOC);
         return $invNum['max_id'];
     }
-    $result = $conn->query("SELECT * FROM students WHERE id='2'");
-    $result->execute();
 ?>

@@ -8,6 +8,7 @@
 
     $dirname = "../../web/avatar/tmp/";
 	$images = glob($dirname . "*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}", GLOB_BRACE);
+    
     if(isset($_POST['button-regist'])) {
         insertTeacher($teacherName, $teacherSpecialized, $teacherDegree, $teacherAvatar, $teacherDescription);
         deleteImgTmp($teacherAvatar);

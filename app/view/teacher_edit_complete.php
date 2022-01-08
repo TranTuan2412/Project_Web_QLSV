@@ -11,7 +11,7 @@
     <div class="main">
         <div>
 			<p>Bạn đã đăng ký thành công giáo viên</p>
-            <a href="../../../login.php">Trở về trang chủ</a>
+            <a href="/login.php">Trở về trang chủ</a>
         </div>
     </div>
 </body>

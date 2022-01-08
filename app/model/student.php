@@ -39,7 +39,14 @@
         $sql = "INSERT INTO `students` (`name`,`avatar`, `description`, `created`) VALUES ('$name','$avatar','$des','$created')";
         $conn->exec($sql);
     } 
-
+    function getId(){
+        global $conn;
+        $sql = "SELECT MAX(id) as max_id FROM `students`";
+        $id = $conn -> query($sql);
+        $id -> execute();
+        $invNum = $id -> fetch(PDO::FETCH_ASSOC);
+        return $invNum['max_id'];
+    }
     $result = $conn->query("SELECT * FROM students WHERE id='2'");
     $result->execute();
 ?>

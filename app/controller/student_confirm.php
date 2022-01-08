@@ -12,8 +12,10 @@
         exit();
     }
     function deleteImgTmp($avatar){
+        $id = getId();
         $file="../../web/avatar/tmp/$avatar";
-        $newfile="../../web/avatar/$avatar";
+        mkdir("../../web/avatar/$id/", 777);
+        $newfile="../../web/avatar/$id/$avatar";
         copy($file, $newfile);
         unlink("../../web/avatar/tmp/".$avatar);
     } 

@@ -3,7 +3,6 @@
     $idStudent = $nameStudent = $avatarStudent = $descriptionStudent = '';
     $error = array('errorName'=> '','errorAvatar'=>'','errorDescription'=>'');
     require "../model/student.php";
-    $_GET['idStudent'] = 2;
     if(!isset($_GET['idStudent'])){
         $idStudent = 2;
         $_SESSION['idStudent'] = $idStudent;

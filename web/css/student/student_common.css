@@ -1,13 +1,8 @@
 body {
   position: relative;
-  min-height: 100vh;
 }
 .box {
   border: 2px solid #788ea8;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
 }
 .box h1 {
   text-align: center;

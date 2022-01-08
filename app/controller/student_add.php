@@ -21,6 +21,20 @@
             $avatar = null;
         } else {
             $avatar = $_FILES["file"]["name"];
+        } else {
+            if($_SESSION['name']) {
+                $name = $_SESSION['name'];
+            } else {
+                $name = $_POST['name'];
+                $_SESSION['name'] = $name;
+            }
+        }
+        if(empty($_FILES['avatar']['name'])) {
+            $error['avatar'] = '*Hãy chọn avatar';
+            $avatar = null;
+        } else {
+            $avatar = $_FILES['avatar']['name'];
+            move_uploaded_file($_FILES['avatar']['tmp_name'], '../../web/avatar/'.$avatar);
         }
         if(empty($_POST['des'])) {
             $error['des'] = '*Hãy nhập mô tả';
@@ -32,6 +46,9 @@
             $des = $_POST['des'];
         }
         $filepath = "../../web/avatar/tmp/" . $_FILES["file"]["name"];
+        } else {
+            $des = $_POST['des'];
+        }
         if(array_filter($error)) {
             //$error['commonErr'] = 'Hãy điền đầy đủ thông tin';
         } else {

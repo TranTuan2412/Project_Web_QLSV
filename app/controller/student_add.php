@@ -7,9 +7,6 @@
         if(empty($_POST['name'])) {
             $error['name'] = '*Hãy nhập tên sinh viên';
             $name = null;
-        } else if(strlen($_POST['name']) > 100) {
-            $error['name'] ='*Không nhập quá 100 ký tự';
-            $name = null;
         } else {
             $name = $_POST['name'];
         }
@@ -21,34 +18,14 @@
             $avatar = null;
         } else {
             $avatar = $_FILES["file"]["name"];
-        } else {
-            if($_SESSION['name']) {
-                $name = $_SESSION['name'];
-            } else {
-                $name = $_POST['name'];
-                $_SESSION['name'] = $name;
-            }
-        }
-        if(empty($_FILES['avatar']['name'])) {
-            $error['avatar'] = '*Hãy chọn avatar';
-            $avatar = null;
-        } else {
-            $avatar = $_FILES['avatar']['name'];
-            move_uploaded_file($_FILES['avatar']['tmp_name'], '../../web/avatar/'.$avatar);
         }
         if(empty($_POST['des'])) {
             $error['des'] = '*Hãy nhập mô tả';
-            $des = null;
-        } else if(strlen($_POST['des']) > 1000) {
-            $error['des'] ='*Không được nhập quá 1000 ký tự';
             $des = null;
         } else {
             $des = $_POST['des'];
         }
         $filepath = "../../web/avatar/tmp/" . $_FILES["file"]["name"];
-        } else {
-            $des = $_POST['des'];
-        }
         if(array_filter($error)) {
             //$error['commonErr'] = 'Hãy điền đầy đủ thông tin';
         } else {

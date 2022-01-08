@@ -1,3 +1,3 @@
 <?php 
-require_once './app/controllers/checkLogin.php';
-require_once './app/views/home.php';
+require_once './app/controller/checkLogin.php';
+require_once './app/view/home.php';

@@ -25,7 +25,7 @@
                     <input id="login-password" type="password" class="input-element" name="value-password">
                 </div>
                 <div class="element">
-                    <a href="?router=reset-password">Reset password</a>
+                    <a href="?router=reset-password">Quên mật khẩu </a>
                 </div>
                 <div class="element">
                     <button type="submit" class="btn-submit" name= "login-submit" >Đăng nhập</button>

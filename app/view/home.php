@@ -36,7 +36,7 @@
                     <label><a href="?router=search-teacher">Tìm kiếm</a> </label>
                     <label><a href="?router=search-subject">Tìm kiếm</a></label>
                     <label><a href="?router=search-student">Tìm kiếm</a></label>
-                     <label><a href="?router=search-score">Tìm kiếm</a></label>
+                     <label><a href="app/view/score_search.php">Tìm kiếm</a></label>
                 </div>
                 <div class="element">
                     <label><a href="?router=add-classroom">Thêm mới</a> </label>

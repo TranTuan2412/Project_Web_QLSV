@@ -36,7 +36,7 @@ select{
     border: 1px solid #385d8a;
     background-color: #e1eaf4;
 }
-.filterbuilding{
+.searchbuilding{
     margin-bottom: 20px;
 }
 .content.container > div{
@@ -51,7 +51,7 @@ tr > td:last-child > button{
     margin-right: 10px;
 }
 
-.filtervalue{
+.searchvalue{
     border-radius: 8px;
     color: black;
     background-color: #4f81bd;
@@ -61,7 +61,7 @@ tr > td:last-child > button{
     width: 20%;
     margin-left: 115px;
 }
-.word{
+.key{
     padding: 7px 10px;
     color: black;
     background-color: #FFFFFF;
@@ -71,14 +71,14 @@ dialog{
     min-width:100px;
     min-height:150px
 }
-.debai{
+.delete{
     min-height: 100px;
     margin: auto;
     text-align: center;
     line-height: 170px;
     font-size: 24px;
 }
-.btn-style{
+.btn-confirm{
     background-color:#d34039;
     color: black;
     border: none;    
@@ -87,7 +87,7 @@ dialog{
     margin:0px 10px ;
     min-width: 90px;
 }
-.btn1-style{
+.btn-cancel{
     background-color: #4f81bd;
     color: black;
     border: none;    

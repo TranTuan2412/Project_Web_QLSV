@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../web/subject/subject_search.css">
+    <link rel="stylesheet" href="../../web/subject/subject_search_styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <!-- <title>Tìm kiếm môn học</title> -->
     <title>Tìm kiếm môn học</title>
 </head>
 <body>
@@ -17,12 +16,12 @@
     <div class="content container">
         <div class='col-md-12'>
             <form name='formsearch' method='GET'>
-                <div class="col-md-12 filterbuilding">
+                <div class="col-md-12 searchbuilding">
                     <div class="col-md-2"></div>
                     <div class="col-sm-2">
-                        <div class="word">Khóa học</div>
+                        <div class="key">Khóa học</div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-5">
                         <select name="school_year" id="school_year" class="filter" >
                             <option value="none"></option>
                             <?php foreach ($listSchoolYear as $key=>$school_year) : ?>
@@ -36,16 +35,16 @@
                 <div class="col-md-12 seacrch">
                     <div class="col-md-2"></div>
                         <div class="col-sm-2">
-                            <div class="word">Từ Khóa</div>
+                            <div class="key">Từ Khóa</div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-5">
                             <label for="" style='width:100%'>
                                 <input type="text" class="filter" id="filter" name="filter">
                             </label>
                         </div>
                 </div>
-                <div class="col-md-12" style='text-align: center;margin-top:20px'>
-                        <button  type="submit" class="filtervalue"  id="btn-search" name="search" >Tìm Kiếm</button>
+                <div class="col-md-11" style='text-align: center;margin-top:20px'>
+                        <button  type="submit" class="searchvalue"  id="btn-search" name="search" >Tìm Kiếm</button>
                 </div>
             </form>
 
@@ -56,16 +55,11 @@
             </div>
                 <table id="admin" class="center">
                     <tr class="header">
-                        <th style="text-align:center;">No
-                        </th>
-                        <th style="text-align:center;">Tên giáo viên
-                        </th>
-                        <th style="text-align:center;">Khoa
-                        </th>
-                        <th style="text-align:center;">Mô tả chi tiết
-                        </th>
-                        <th style="text-align:center;">Action
-                        </th>
+                        <th style="text-align:center;">No</th>
+                        <th style="text-align:center;">Tên môn học</th>
+                        <th style="text-align:center;">Khoa</th>
+                        <th style="text-align:center;">Mô tả chi tiết</th>
+                        <th style="text-align:center;">Action</th>
                     </tr>
                     <?php foreach ($rowAll as $subject) : ?>
                         <tr>
@@ -98,7 +92,7 @@
                                             onclick="document.getElementById('my-dialog-<?php echo $subject['id']?>').showModal();" >Xóa</button>
                                             <dialog id="my-dialog-<?php echo $subject['id']?>" style="border:1px solid #4da6ff ">
                                                     <div class="col-sm-12">
-                                                        <div class="col-sm-12 debai">
+                                                        <div class="col-sm-12 delete">
                                                             Bạn chắc chắn xóa môn học <?php echo $subject['name']?>?
                                                             <input type="hidden" name="infoID" value="<?php echo $subject['id']?>">
                                                         </div>
@@ -106,8 +100,8 @@
                                                     <div class="col-md-12" >
                                                         <div class="col-sm-8"></div>
                                                         <div class="col-sm-3"style="text-align:right;display:flex">
-                                                            <button  type="submit" id="oki5" class="btn1-style" name='delete'>Confirm</button>
-                                                            <button type="button" id="close5"  class="btn-style" 
+                                                            <button  type="submit" id="oki" class="btn-confirm" name='delete'>Confirm</button>
+                                                            <button type="button" id="close"  class="btn-cancel" 
                                                             onclick="document.getElementById('my-dialog-<?php echo $subject['id']?>').close();">Cancel</button>
                                                         </div>
                                                             

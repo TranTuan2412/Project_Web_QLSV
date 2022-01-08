@@ -4,7 +4,6 @@
     $error = array('errorName'=> '','errorAvatar'=>'','errorDescription'=>'');
     require "../model/student.php";
     if(!isset($_GET['idStudent'])){
-        $idStudent = 2;
         $_SESSION['idStudent'] = $idStudent;
         if($idStudent != ''){
             $result = getData($idStudent);
@@ -15,7 +14,7 @@
             $descriptionStudent = $row['description'];
         }
     }
-    $idStudent = $_SESSION['idStudent'];
+    // $idStudent = $_SESSION['idStudent'];
     $_SESSION['student_edit_input'] = FALSE;
     $uploadStudent = FALSE;
 

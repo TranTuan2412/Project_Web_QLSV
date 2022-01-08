@@ -11,8 +11,5 @@
         $id = $_POST['infoID'];
         deleteData($id);
         $rowAll=showTable();
-        // $word = trim($_GET['filter']);
-        // $specialized= $_GET['specialized'];
-        // $rowAll = searchData($word, $specialized);
     }
 ?>

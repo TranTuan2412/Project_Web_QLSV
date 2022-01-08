@@ -18,7 +18,6 @@
     }
     $idStudent = $_SESSION["idStudent"];
     $uploadStudent = FALSE;
-    $tmp = $avatarStudent;
     if(isset($_POST['submit'])){
         if (empty(trim($_POST['studentName']))){
             $error['errorName']= 'Hãy nhập tên sinh viên <br>';
@@ -58,10 +57,8 @@
                 $avatarStudent=$_FILES['file']['name'];
                 $_SESSION['uploadStudent'] = TRUE;
             } else{
-                $avatarStudent = $tmp;
                 $_SESSION['uploadStudent'] = FALSE;
             }
-        
             header("Location:student_edit_confirm.php?nameStudent=$nameStudent&descriptionStudent=$descriptionStudent&avatarStudent=$avatarStudent");
         }
         

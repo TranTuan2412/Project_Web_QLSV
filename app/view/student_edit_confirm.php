@@ -27,7 +27,7 @@ require '../../app/controller/student_edit_confirm_controller.php';
                         </div>
                         <div style='width: 50px;'></div>
                         <div class="labelinput">
-                            <img src="<?php echo $dirImage;?>">
+                            <img src="<?php echo $dirImage; ?>">
                         </div>
                     </div>
         

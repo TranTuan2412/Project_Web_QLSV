@@ -45,9 +45,21 @@
                     <label><a href="app/view/student_add_input.php">Thêm mới</a> </label>
                     <label><a href="">Thêm mới</a> </label>
                 </div>
-                <div class="element">
-                    <a href="?">Đăng xuất</a>
-                </div>
+                <button type="button" name="button-logout">
+						Đăng xuất
+			    </button>
+                <?php
+                    if(isset($_POST['button-logout'])){
+                        $_SESSION['auth'] = FALSE;
+                        header("/index.php"); 
+                    }
+                ?>
+                <?php
+
+                ?>
+                <!-- <div class="element">
+                    <>Đăng xuất</a>
+                </div> -->
             </div>
         </div>
     </div>

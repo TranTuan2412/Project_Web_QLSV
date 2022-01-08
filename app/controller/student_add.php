@@ -7,11 +7,14 @@
         if(empty($_POST['name'])) {
             $error['name'] = '*Hãy nhập tên sinh viên';
             $name = null;
+        } else if(strlen(trim($_POST['name']))>100) {
+            $error['name'] = '* Không được nhập quá 100 ký tự';
+            $name = null;
         } else {
             $name = $_POST['name'];
         }
         if (empty($_FILES["file"]["name"])) {
-            $error['avatar'] = 'Hãy chọn avatar';
+            $error['avatar'] = '*Hãy chọn avatar';
             $avatar = null;
         } else if (!preg_match("/\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$/", $_FILES["file"]["name"])) {
             $error['avatar'] = 'Đây không là file ảnh';
@@ -22,6 +25,8 @@
         if(empty($_POST['des'])) {
             $error['des'] = '*Hãy nhập mô tả';
             $des = null;
+        } else if(strlen(trim($_POST['des']))>1000) {
+            $error['des'] = '* Không được nhập quá 1000 ký tự';
         } else {
             $des = $_POST['des'];
         }

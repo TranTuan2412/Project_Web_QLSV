@@ -17,8 +17,6 @@
         }
     }
     $idStudent = $_SESSION["idStudent"];
-    $_SESSION['student_edit_input'] = FALSE;
-    $uploadStudent = FALSE;
 
     if(isset($_POST['submit'])){
         if (empty(trim($_POST['studentName']))){
@@ -29,6 +27,7 @@
         } else {
             $nameStudent = trim($_POST['studentName']);
         }
+
         if (empty(trim($_POST['studentDescription']))){
             $error['errorDescription']= 'Hãy nhập mô tả thêm <br>';
             $descriptionStudent = "";
@@ -37,31 +36,33 @@
         } else {
             $descriptionStudent = trim($_POST['studentDescription']);
         }
-        if(!empty($_FILES['file']['name'])){
-            $target_dir = "../../web/avatar/tmp/";
-            $target_file = $target_dir . basename($_FILES['file']['name']);
-            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-            $allowtypes= array('jpg', 'png', 'jpeg','PNG','JPG','JPEG');
-            if(!getimagesize($_FILES['file']['tmp_name'])){
-                $error['errorAvatar'] = $error['errorAvatar'] . 'Hãy gửi lên hình ảnh <br>';
-                $uploadStudent = FALSE;
-            }
-            if(!in_array($imageFileType,$allowtypes)){
-                $error['errorAvatar'] = $error['errorAvatar'] . 'Hãy gửi lên định dạng JPG,PNG,JPEG <br>';
-                $uploadStudent = FALSE;
-            }
+
+        if (empty($_POST['avatarStudent'])) {
+            $errors['errorAvatar'] = 'Hãy chọn avatar <br />';
+            $avatarStudent = "";
+        } else if (!preg_match("/\.(jpg|jpeg|png|JPG|JPEG|PNG)$/", $_POST['avatarStudent'])) {
+            $errors['errorAvatar'] = 'Đây không là file ảnh <br />';
+            $avatarStudent = "";
+        } else {
+            $avatarStudent = $_POST['avatarStudent'];
         }
+
+
+
+        $filepath = "../../web/avatar/tmp/" . $_FILES["file"]["name"];
+        
         if(!array_filter($error)){
-            if(!empty($_FILES['file']['name'])){
-                move_uploaded_file($_FILES['file']['tmp_name'],$target_file);
-                $avatarStudent=$_FILES['file']['name'];
-                $_SESSION['uploadStudent'] = TRUE;
-            } else{
-                $_SESSION['uploadStudent'] = FALSE;
-            }
-            $_SESSION['student_edit_input'] = TRUE;
             header("Location:student_edit_confirm.php?nameStudent=$nameStudent&descriptionStudent=$descriptionStudent&avatarStudent=$avatarStudent");
+            if (move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) {
+                echo "DONE !!";
+            } else {
+                echo "Error !!";
+            }
         }
         
     }
+?>
+<?php
+    $dirname = "../../web/avatar/student/$idStudent/";
+    $images = glob($dirname . "*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}", GLOB_BRACE);
 ?>

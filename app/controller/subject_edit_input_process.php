@@ -46,7 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!isset($_SESSION["subject_avatar"]) && !$_SESSION["cur_subject_avatar"]) {
         $_SESSION["subject_avatar_error"] = "Hãy chọn avatar.";
     }
-
+    if (!file_exists('../../../web/avatar/subject_tmp')) {
+        mkdir('../../../web/avatar/subject_tmp', 0777, true);
+    }
     if (!isset($_SESSION['had_avatar'])) {
         if (
             isset($_SESSION["subject_avatar"]) &&

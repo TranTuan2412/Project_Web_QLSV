@@ -16,7 +16,7 @@
 <form method='post' action="">
 <div id='complete_edit_subject'>
     <div class="complete"> Bạn đã cập nhật thông tin môn học <?php echo $subject_name ?> </div>
-    <a class="complete" href="login.php"> <i> Trở về trang chủ </i> </a>
+    <a class="complete" href="home.php"> <i> Trở về trang chủ </i> </a>
 </div>
 </form>
 </html>

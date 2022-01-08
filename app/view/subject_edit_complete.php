@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <title>Sửa thông tin môn học</title>
     <link rel="stylesheet" href="../../web/subject/subject_edit_styles.css">
 </head>
 <?php

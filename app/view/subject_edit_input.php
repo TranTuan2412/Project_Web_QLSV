@@ -36,6 +36,7 @@ $subject_avatar_error = $_SESSION["subject_avatar_error"] ?? '';
 <html>
 
 <head>
+    <title>Sửa thông tin môn học</title>
     <link rel="stylesheet" href="../../web/subject/subject_edit_styles.css">
     <script src="../../web/subject/subject_edit_scripts.js"></script>
 </head>

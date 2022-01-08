@@ -23,6 +23,7 @@ if (isset($_SESSION['subject_avatar'])) {
 <html>
 
 <head>
+    <title>Sửa thông tin môn học</title>
     <link rel="stylesheet" href="../../web/subject/subject_edit_styles.css">
     <script src="../../web/subject/subject_edit_scripts.js"></script>
 </head>

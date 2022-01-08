@@ -12,4 +12,6 @@
     - code chính trong branch main-test.
     - code phần teacher trong branch edit-teacher
     - code phần student trong branch add-edit-student
+    - code phần subject trong branch merge-subject
+    - code phần score trong branch search_score
     

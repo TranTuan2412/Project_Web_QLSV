@@ -41,8 +41,8 @@
     }
 
     function deleteScore($id){
-        global $connect;
-        $query = $connect->query("DELETE FROM scores where id=" . $id);
+        global $conn;
+        $query = $conn->query("DELETE FROM scores where id=" . $id);
         $query->execute();
         return 1;
     }

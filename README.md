@@ -1,5 +1,5 @@
 # QUAN LY SINH VIEN
-# Convention coding
+# Coding convention
 + Account login :
     - username = 'admin@gmail.com';
     - password = '123456';

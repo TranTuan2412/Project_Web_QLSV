@@ -37,7 +37,7 @@
             <div class="mb-3 row">
                 <label class="col-3">Mô tả thêm</label>
                 <div class="col-9">
-                  <textarea name="des" rows="9" cols="60" maxlength="1000" disabled><?php echo $moTa ?></textarea>
+                  <textarea readonly name="des" rows="9" cols="60" maxlength="1000" disabled><?php echo $moTa ?></textarea>
                 </div>
             </div>
             <div class="btn-pos mt-5">

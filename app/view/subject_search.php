@@ -61,15 +61,13 @@
                         <th style="text-align:center;">Mô tả chi tiết</th>
                         <th style="text-align:center;">Action</th>
                     </tr>
-                    <?php foreach ($rowAll as $subject) : ?>
+                    <?php foreach ($rowAll as $key => $subject) : ?>
                         <tr>
                             <form action="" 
                                   method='POST'>
                                 <td>
-                                    <?php echo $subject['id']?>
-                                    <input type="hidden" 
-                                           name='id' 
-                                           value='<?php echo $subject['id']?>' >
+                                    <?php echo $key+1?>
+                                   
                                 </td>
                                 <td>
                                     <?php echo $subject['name']?>

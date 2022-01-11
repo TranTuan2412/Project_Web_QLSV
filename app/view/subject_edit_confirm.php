@@ -49,7 +49,7 @@ if (isset($_SESSION['subject_avatar'])) {
                 Mô tả thêm
             </div>
 
-            <label class='input_description'><?php echo $subject_description; ?></label>
+            <textarea readonly class='input_box description'><?php echo $subject_description; ?></textarea>
         </div>
 
         <div class='box avatar_box '>

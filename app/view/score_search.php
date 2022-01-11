@@ -63,11 +63,11 @@
                         <th>Điểm</th>
                         <th>Action</th>
                     </tr>
-                    <?php foreach ($data as $scores) :?>
+                    <?php foreach ($data as $key => $scores) :?>
                         <tr>
                             <form method="POST">
                                 <td>
-                                    <?php echo $scores['id']?>
+                                    <?php echo $key+1?>
                                 </td>
                                 <td>
                                     <?php echo $scores['sinh_vien']?>
@@ -93,7 +93,7 @@
                                         <div class="col-md-12" >
                                             <div class="col-sm-8"></div>
                                             <div class="col-sm-4 dialog-action">
-                                                <button  type="submit" id="oki5" class="btn1-style" name='delete'>Confirm</button>
+                                                <button  type="submit" id="oki5" class="btn1-style" name='delete'>OK</button>
                                                 <button type="button" id="close5"  class="btn-style" 
                                                 onclick="document.getElementById('my-dialog-<?php echo $scores['id']?>').close();">Cancel</button>
                                             </div>

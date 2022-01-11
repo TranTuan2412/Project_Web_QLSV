@@ -41,11 +41,18 @@
                         <th class="class-ac"> Action
                         </th>
                     </tr>
+                    <?php
+                        $sttS = 0;
+                    ?>
                     <?php foreach ($allStudents as $student) : ?>
                         <tr>
                             <form action="" method='POST'>
                                 <td>
-                                    <?php echo $student['id']?>
+                                    <?php
+                                        $sttS ++;
+                                        echo $sttS;
+                                        // echo $student['id']
+                                    ?>
                                     <input type="hidden" name='id' value='<?php echo $student['id']?>' >
                                 </td>
                                 <td>

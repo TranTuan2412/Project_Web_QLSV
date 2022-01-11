@@ -34,13 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $subject_school_year
         );
     }
-    unset($_SESSION['subject_id']);
-    unset($_SESSION['subject_name']);
-    unset($_SESSION['subject_school_year']);
-    unset($_SESSION['subject_description']);
-    unset($_SESSION['cur_subject_avatar']);
-    unset($_SESSION['subject_avatar']);
-    unset($_SESSION['had_avatar']);
+
 
     header("Location: ../../app/view/subject_edit_complete.php");
 }

@@ -10,14 +10,7 @@ function select_All_Admin(){
         return $data;        
     }
 
-    
-    function select_All_LoginId($login_id){
-    require_once './app/common/db.php';
-        $data = $conn -> prepare($sql);
-        $data -> execute();
-        return $data;        
-      
-    }  
+
 
     
 ?>

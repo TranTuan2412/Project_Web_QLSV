@@ -33,7 +33,6 @@
 			$teacherAvatar = "";
 		} else{
 			$teacherAvatar = $_POST['teacherAvatar'];
-			move_uploaded_file($_FILES['teacherAvatar']['tmp_name'], '../../web/image/'.$teacherAvatar);
 		}
 
 		if (empty($_POST['teacherDescription'])) {
